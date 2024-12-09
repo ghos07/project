@@ -125,10 +125,10 @@ GameObject:
   - component: {fileID: 7676372940710782659}
   - component: {fileID: 8917355125641055661}
   - component: {fileID: 4805032967363036206}
-  - component: {fileID: 7814739323736114500}
   - component: {fileID: 5934271631996186725}
   - component: {fileID: 1858382086239306520}
   - component: {fileID: 1695466852576567980}
+  - component: {fileID: 4821564253064128340}
   m_Layer: 0
   m_Name: Plank.028 (1)
   m_TagString: Untagged
@@ -228,27 +228,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &7814739323736114500
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92988545859584111}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044563226, y: 0.01637714, z: 0.0017057696}
-  m_Center: {x: -0.008173963, y: -0.00023783739, z: 0.0068410193}
 --- !u!114 &5934271631996186725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,20 +249,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92988545859584111}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -311,6 +292,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &4821564253064128340
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92988545859584111}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044563226, y: 0.01637714, z: 0.0017057696}
+  m_Center: {x: -0.008173963, y: -0.00023783739, z: 0.0068410193}
 --- !u!1 &194040650192030697
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,10 +325,10 @@ GameObject:
   - component: {fileID: 4615359997053904733}
   - component: {fileID: 8207458428404309085}
   - component: {fileID: 945143684134524189}
-  - component: {fileID: 1609994705965878980}
   - component: {fileID: 6793523538629940932}
   - component: {fileID: 5593224522145840134}
   - component: {fileID: 6084908928384205069}
+  - component: {fileID: 4458411439501274353}
   m_Layer: 0
   m_Name: Plank.020 (1)
   m_TagString: Untagged
@@ -426,27 +428,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &1609994705965878980
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 194040650192030697}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.002707731, y: 0.015919628, z: 0.00044562612}
-  m_Center: {x: 7.566996e-10, y: 0, z: -0.007452003}
 --- !u!114 &6793523538629940932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,20 +449,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194040650192030697}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -509,6 +492,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &4458411439501274353
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194040650192030697}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.002707731, y: 0.015919628, z: 0.00044562612}
+  m_Center: {x: 7.566996e-10, y: 0, z: -0.007452003}
 --- !u!1 &309706805550840488
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,10 +525,10 @@ GameObject:
   - component: {fileID: 5206759325813519903}
   - component: {fileID: 7707309046625032666}
   - component: {fileID: 8333372969646581557}
-  - component: {fileID: 1221690681912142206}
   - component: {fileID: 9014080984198003480}
   - component: {fileID: 5154515738860087750}
   - component: {fileID: 6234936595703673009}
+  - component: {fileID: 7549180021067073456}
   m_Layer: 0
   m_Name: Plank.009 (1)
   m_TagString: Untagged
@@ -624,27 +628,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &1221690681912142206
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309706805550840488}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.016179912, y: 0.004357052, z: 0.00082392787}
-  m_Center: {x: -0.00001349533, y: 0.0044169556, z: -0.008293771}
 --- !u!114 &9014080984198003480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,20 +649,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309706805550840488}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -707,6 +692,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &7549180021067073456
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309706805550840488}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.016179912, y: 0.004357052, z: 0.00082392787}
+  m_Center: {x: -0.00001349533, y: 0.0044169556, z: -0.008293771}
 --- !u!1 &332304281974081802
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,10 +725,10 @@ GameObject:
   - component: {fileID: 4953356378459712165}
   - component: {fileID: 8979345019276679449}
   - component: {fileID: 5144343456157904853}
-  - component: {fileID: 448583131234229812}
   - component: {fileID: 20210759449416217}
   - component: {fileID: 998989091742743692}
   - component: {fileID: 2896158460652322127}
+  - component: {fileID: 7775716145596335753}
   m_Layer: 0
   m_Name: Plank.055 (1)
   m_TagString: Untagged
@@ -822,27 +828,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &448583131234229812
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 332304281974081802}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044562574, y: 0.015935697, z: 0.0028072197}
-  m_Center: {x: -0.007949416, y: 0, z: -0.0028036223}
 --- !u!114 &20210759449416217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,20 +849,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332304281974081802}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -905,6 +892,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &7775716145596335753
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332304281974081802}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044562574, y: 0.015935697, z: 0.0028072197}
+  m_Center: {x: -0.007949416, y: 0, z: -0.0028036223}
 --- !u!1 &642838948333641907
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,10 +925,10 @@ GameObject:
   - component: {fileID: 3193245473838952726}
   - component: {fileID: 2699305412298019519}
   - component: {fileID: 4131834361673395336}
-  - component: {fileID: 7920144694229545802}
   - component: {fileID: 7401055534276276907}
   - component: {fileID: 4490526451504185191}
   - component: {fileID: 5643347598348737466}
+  - component: {fileID: 1583299416899856067}
   m_Layer: 0
   m_Name: Plank.048 (1)
   m_TagString: Untagged
@@ -1020,27 +1028,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &7920144694229545802
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642838948333641907}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.01594564, y: 0.00044978262, z: 0.0028705806}
-  m_Center: {x: -0.00008072844, y: 0.007932049, z: 0.0054936837}
 --- !u!114 &7401055534276276907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1062,20 +1049,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642838948333641907}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -1103,6 +1092,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &1583299416899856067
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642838948333641907}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.01594564, y: 0.00044978262, z: 0.0028705806}
+  m_Center: {x: -0.00008072844, y: 0.007932049, z: 0.0054936837}
 --- !u!1 &647134659321236183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,10 +1125,10 @@ GameObject:
   - component: {fileID: 1681076764724669286}
   - component: {fileID: 4058968877820363815}
   - component: {fileID: 5776471250886355975}
-  - component: {fileID: 9100996286653112437}
   - component: {fileID: 1227109750918441487}
   - component: {fileID: 4138628525973983545}
   - component: {fileID: 3989609579952435870}
+  - component: {fileID: 1171149131925883240}
   m_Layer: 0
   m_Name: Plank
   m_TagString: Untagged
@@ -1218,27 +1228,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &9100996286653112437
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647134659321236183}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0027077314, y: 0.015919635, z: 0.0004456266}
-  m_Center: {x: 0.0000000022700988, y: 0, z: 0.007446817}
 --- !u!114 &1227109750918441487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1260,20 +1249,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647134659321236183}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -1301,6 +1292,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &1171149131925883240
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647134659321236183}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0027077314, y: 0.015919635, z: 0.0004456266}
+  m_Center: {x: 0.0000000022700988, y: 0, z: 0.007446817}
 --- !u!1 &879494714295701928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,10 +1325,10 @@ GameObject:
   - component: {fileID: 3919794587081674653}
   - component: {fileID: 2141958461383539865}
   - component: {fileID: 2871033303754635924}
-  - component: {fileID: 4893412112180298803}
   - component: {fileID: 2979364953513777460}
   - component: {fileID: 6860330037101707594}
   - component: {fileID: 2246049749994705655}
+  - component: {fileID: 8958509154527472593}
   m_Layer: 0
   m_Name: Plank.057 (1)
   m_TagString: Untagged
@@ -1416,27 +1428,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &4893412112180298803
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 879494714295701928}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044894265, y: 0.015916178, z: 0.0026865846}
-  m_Center: {x: -0.007949416, y: 0.0000012777743, z: 0.002670168}
 --- !u!114 &2979364953513777460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1458,20 +1449,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879494714295701928}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -1499,6 +1492,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &8958509154527472593
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879494714295701928}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044894265, y: 0.015916178, z: 0.0026865846}
+  m_Center: {x: -0.007949416, y: 0.0000012777743, z: 0.002670168}
 --- !u!1 &898667753773912852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1511,10 +1525,10 @@ GameObject:
   - component: {fileID: 163481573013515440}
   - component: {fileID: 9055916304143009051}
   - component: {fileID: 6634021819864457196}
-  - component: {fileID: 4616502516593147280}
   - component: {fileID: 1173724854479404347}
   - component: {fileID: 1190359427292253077}
   - component: {fileID: 3262836429254272914}
+  - component: {fileID: 4710730087920755602}
   m_Layer: 0
   m_Name: Hinge Shaft R (1)
   m_TagString: Untagged
@@ -1614,27 +1628,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &4616502516593147280
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898667753773912852}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00023120921, y: 0.0018779539, z: 0.0002312101}
-  m_Center: {x: -0.00842759, y: -0.0063079675, z: 0.008138282}
 --- !u!114 &1173724854479404347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1656,20 +1649,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898667753773912852}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -1697,6 +1692,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &4710730087920755602
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898667753773912852}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00023120921, y: 0.0018779539, z: 0.0002312101}
+  m_Center: {x: -0.00842759, y: -0.0063079675, z: 0.008138282}
 --- !u!1 &1034609647538997827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,10 +1725,10 @@ GameObject:
   - component: {fileID: 2480749803544048081}
   - component: {fileID: 5755211976853572261}
   - component: {fileID: 2804634849646297084}
-  - component: {fileID: 8812104065030596475}
   - component: {fileID: 2919291450624103402}
   - component: {fileID: 8142149631074480735}
   - component: {fileID: 3714233240736877646}
+  - component: {fileID: 2254049947684849163}
   m_Layer: 0
   m_Name: Plank.040 (1)
   m_TagString: Untagged
@@ -1812,27 +1828,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &8812104065030596475
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034609647538997827}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044562668, y: 0.01347408, z: 0.012251964}
-  m_Center: {x: 0.008173963, y: 0.00038937776, z: -0.00011749959}
 --- !u!114 &2919291450624103402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1854,20 +1849,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034609647538997827}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -1895,6 +1892,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &2254049947684849163
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034609647538997827}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044562668, y: 0.01347408, z: 0.012251964}
+  m_Center: {x: 0.008173963, y: 0.00038937776, z: -0.00011749959}
 --- !u!1 &1065775210083747691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1907,10 +1925,10 @@ GameObject:
   - component: {fileID: 4254839260605689622}
   - component: {fileID: 6222039273298883567}
   - component: {fileID: 944219893003597143}
-  - component: {fileID: 7957723661672548523}
   - component: {fileID: 5747764070136816957}
   - component: {fileID: 5631344757251322471}
   - component: {fileID: 5638905922235428936}
+  - component: {fileID: 1641953524030684514}
   m_Layer: 0
   m_Name: Plank.029 (1)
   m_TagString: Untagged
@@ -2010,27 +2028,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &7957723661672548523
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1065775210083747691}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044562668, y: 0.0013139776, z: 0.012401076}
-  m_Center: {x: -0.008092194, y: -0.0077065127, z: -0.0001828584}
 --- !u!114 &5747764070136816957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2052,20 +2049,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065775210083747691}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -2093,6 +2092,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &1641953524030684514
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065775210083747691}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044562668, y: 0.0013139776, z: 0.012401076}
+  m_Center: {x: -0.008092194, y: -0.0077065127, z: -0.0001828584}
 --- !u!1 &1292860781752669090
 GameObject:
   m_ObjectHideFlags: 0
@@ -2105,10 +2125,10 @@ GameObject:
   - component: {fileID: 4844636826361572224}
   - component: {fileID: 661508027244450294}
   - component: {fileID: 6665826234404648735}
-  - component: {fileID: 6687075716895612833}
   - component: {fileID: 6532739077730803837}
   - component: {fileID: 4364718055846292146}
   - component: {fileID: 2101191653505224146}
+  - component: {fileID: 8778461652745271789}
   m_Layer: 0
   m_Name: Plank.027 (1)
   m_TagString: Untagged
@@ -2208,27 +2228,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &6687075716895612833
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292860781752669090}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044563226, y: 0.016475169, z: 0.0017057691}
-  m_Center: {x: -0.008173963, y: -0.00012804658, z: -0.007071487}
 --- !u!114 &6532739077730803837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2250,20 +2249,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292860781752669090}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -2291,6 +2292,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &8778461652745271789
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292860781752669090}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044563226, y: 0.016475169, z: 0.0017057691}
+  m_Center: {x: -0.008173963, y: -0.00012804658, z: -0.007071487}
 --- !u!1 &1301084844019255253
 GameObject:
   m_ObjectHideFlags: 0
@@ -2303,10 +2325,10 @@ GameObject:
   - component: {fileID: 8286159685800377584}
   - component: {fileID: 2268692166820053781}
   - component: {fileID: 8370383226439241211}
-  - component: {fileID: 4815440676178108268}
   - component: {fileID: 5975189119215658638}
   - component: {fileID: 4896326153974653692}
   - component: {fileID: 417290456985260202}
+  - component: {fileID: 51793170958330650}
   m_Layer: 0
   m_Name: Plank.014 (1)
   m_TagString: Untagged
@@ -2406,27 +2428,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &4815440676178108268
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1301084844019255253}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.012401078, y: 0.0016497901, z: 0.00044562752}
-  m_Center: {x: -0.00018285774, y: 0.007874422, z: -0.0077364836}
 --- !u!114 &5975189119215658638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2448,20 +2449,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1301084844019255253}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -2489,6 +2492,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &51793170958330650
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301084844019255253}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.012401078, y: 0.0016497901, z: 0.00044562752}
+  m_Center: {x: -0.00018285774, y: 0.007874422, z: -0.0077364836}
 --- !u!1 &1375488360308073464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,10 +2525,10 @@ GameObject:
   - component: {fileID: 4141356473080741425}
   - component: {fileID: 8546289997521660579}
   - component: {fileID: 623334562360929320}
-  - component: {fileID: 9199960831612545862}
   - component: {fileID: 998596269792866780}
   - component: {fileID: 4334033428876983915}
   - component: {fileID: 3041732554054278727}
+  - component: {fileID: 7155097803645395459}
   m_Layer: 0
   m_Name: Plank.010 (1)
   m_TagString: Untagged
@@ -2604,27 +2628,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &9199960831612545862
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1375488360308073464}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.016147992, y: 0.004235065, z: 0.0008277938}
-  m_Center: {x: 0.0000028414652, y: -0.0042366777, z: -0.008293005}
 --- !u!114 &998596269792866780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2646,20 +2649,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375488360308073464}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -2687,6 +2692,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &7155097803645395459
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375488360308073464}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.016147992, y: 0.004235065, z: 0.0008277938}
+  m_Center: {x: 0.0000028414652, y: -0.0042366777, z: -0.008293005}
 --- !u!1 &2029655229144654511
 GameObject:
   m_ObjectHideFlags: 0
@@ -2699,10 +2725,10 @@ GameObject:
   - component: {fileID: 8458662697843465201}
   - component: {fileID: 1112761898360627450}
   - component: {fileID: 7779775449922625297}
-  - component: {fileID: 8727275386171155792}
   - component: {fileID: 6279729023563419645}
   - component: {fileID: 7744819700473007229}
   - component: {fileID: 3419713658266252510}
+  - component: {fileID: 4795699969007956856}
   m_Layer: 0
   m_Name: Plank.025 (1)
   m_TagString: Untagged
@@ -2802,27 +2828,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &8727275386171155792
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029655229144654511}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.013474083, y: 0.0004456331, z: 0.012251964}
-  m_Center: {x: -0.0003893741, y: 0.008173961, z: -0.00011749959}
 --- !u!114 &6279729023563419645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2844,20 +2849,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029655229144654511}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -2885,6 +2892,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &4795699969007956856
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029655229144654511}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.013474083, y: 0.0004456331, z: 0.012251964}
+  m_Center: {x: -0.0003893741, y: 0.008173961, z: -0.00011749959}
 --- !u!1 &2125996526683137379
 GameObject:
   m_ObjectHideFlags: 0
@@ -2897,10 +2925,10 @@ GameObject:
   - component: {fileID: 2083508030952122304}
   - component: {fileID: 1024258867253174563}
   - component: {fileID: 1788314114775504843}
-  - component: {fileID: 6898709747161162587}
   - component: {fileID: 3960920732151612628}
   - component: {fileID: 9205491992656714214}
   - component: {fileID: 4174642348824858908}
+  - component: {fileID: 4848875759917745283}
   m_Layer: 0
   m_Name: Plank.018 (1)
   m_TagString: Untagged
@@ -3000,27 +3028,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &6898709747161162587
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125996526683137379}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0028705816, y: 0.015945636, z: 0.00044978262}
-  m_Center: {x: 0.0054936856, y: 0.0000012186354, z: -0.007381355}
 --- !u!114 &3960920732151612628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3042,20 +3049,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125996526683137379}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -3083,6 +3092,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &4848875759917745283
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125996526683137379}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0028705816, y: 0.015945636, z: 0.00044978262}
+  m_Center: {x: 0.0054936856, y: 0.0000012186354, z: -0.007381355}
 --- !u!1 &2337660043296417848
 GameObject:
   m_ObjectHideFlags: 0
@@ -3095,10 +3125,10 @@ GameObject:
   - component: {fileID: 2571626989975515705}
   - component: {fileID: 6681856588390131744}
   - component: {fileID: 7386432689239083638}
-  - component: {fileID: 6816015896634388546}
   - component: {fileID: 6392783698031238753}
   - component: {fileID: 4376320167022717265}
   - component: {fileID: 4567809508184198353}
+  - component: {fileID: 4661624933909348294}
   m_Layer: 0
   m_Name: Plank.034 (1)
   m_TagString: Untagged
@@ -3198,27 +3228,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &6816015896634388546
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2337660043296417848}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0016497914, y: 0.0004456266, z: 0.012401076}
-  m_Center: {x: 0.0075064516, y: -0.00810691, z: -0.0001828584}
 --- !u!114 &6392783698031238753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3240,20 +3249,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2337660043296417848}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -3281,6 +3292,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &4661624933909348294
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2337660043296417848}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0016497914, y: 0.0004456266, z: 0.012401076}
+  m_Center: {x: 0.0075064516, y: -0.00810691, z: -0.0001828584}
 --- !u!1 &2432677549540402764
 GameObject:
   m_ObjectHideFlags: 0
@@ -3293,10 +3325,10 @@ GameObject:
   - component: {fileID: 3710100742840300242}
   - component: {fileID: 6824431889220513701}
   - component: {fileID: 151269556673521263}
-  - component: {fileID: 5341261984078978200}
   - component: {fileID: 7437074096729523187}
   - component: {fileID: 5937584733159956098}
   - component: {fileID: 5975295331177290590}
+  - component: {fileID: 7172178523710461399}
   m_Layer: 0
   m_Name: Plank.041 (1)
   m_TagString: Untagged
@@ -3396,27 +3428,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &5341261984078978200
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2432677549540402764}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.015927907, y: 0.000445628, z: 0.002758488}
-  m_Center: {x: -0.00009961007, y: -0.007895723, z: -0.005735617}
 --- !u!114 &7437074096729523187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3438,20 +3449,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2432677549540402764}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -3479,6 +3492,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &7172178523710461399
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2432677549540402764}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.015927907, y: 0.000445628, z: 0.002758488}
+  m_Center: {x: -0.00009961007, y: -0.007895723, z: -0.005735617}
 --- !u!1 &2506602078945144077
 GameObject:
   m_ObjectHideFlags: 0
@@ -3491,10 +3525,10 @@ GameObject:
   - component: {fileID: 8846830085747664071}
   - component: {fileID: 5753987467713560207}
   - component: {fileID: 7465732889951191274}
-  - component: {fileID: 41267923791754158}
   - component: {fileID: 3357710225262422681}
   - component: {fileID: 3601858830130234078}
   - component: {fileID: 1200085456910996918}
+  - component: {fileID: 1586540415736297320}
   m_Layer: 0
   m_Name: Plank.007
   m_TagString: Untagged
@@ -3594,27 +3628,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &41267923791754158
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2506602078945144077}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.002807232, y: 0.015935706, z: 0.00044562705}
-  m_Center: {x: -0.0028036202, y: 0.0000000018626448, z: 0.0074468185}
 --- !u!114 &3357710225262422681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3636,20 +3649,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2506602078945144077}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -3677,6 +3692,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &1586540415736297320
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2506602078945144077}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.002807232, y: 0.015935706, z: 0.00044562705}
+  m_Center: {x: -0.0028036202, y: 0.0000000018626448, z: 0.0074468185}
 --- !u!1 &2601022090511539682
 GameObject:
   m_ObjectHideFlags: 0
@@ -3689,10 +3725,10 @@ GameObject:
   - component: {fileID: 6742619416681300927}
   - component: {fileID: 275511503038405356}
   - component: {fileID: 6862807445985843809}
-  - component: {fileID: 9088764935480608415}
   - component: {fileID: 5464033777436278439}
   - component: {fileID: 148484349104512453}
   - component: {fileID: 5618188784545058555}
+  - component: {fileID: 6539357663862518149}
   m_Layer: 0
   m_Name: Plank.015 (1)
   m_TagString: Untagged
@@ -3792,27 +3828,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &9088764935480608415
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2601022090511539682}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.012251966, y: 0.01347408, z: 0.00044562752}
-  m_Center: {x: -0.00011749845, y: 0.00038937776, z: -0.007818256}
 --- !u!114 &5464033777436278439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3834,20 +3849,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2601022090511539682}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -3875,6 +3892,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &6539357663862518149
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2601022090511539682}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.012251966, y: 0.01347408, z: 0.00044562752}
+  m_Center: {x: -0.00011749845, y: 0.00038937776, z: -0.007818256}
 --- !u!1 &2769922912735538254
 GameObject:
   m_ObjectHideFlags: 0
@@ -3887,10 +3925,10 @@ GameObject:
   - component: {fileID: 7095576376398741059}
   - component: {fileID: 6827994646071384899}
   - component: {fileID: 7596727921319116995}
-  - component: {fileID: 4959409662547482517}
   - component: {fileID: 316944610622888330}
   - component: {fileID: 908328188379825950}
   - component: {fileID: 7060317736407583921}
+  - component: {fileID: 6131579213930874189}
   m_Layer: 0
   m_Name: Plank.002
   m_TagString: Untagged
@@ -3990,27 +4028,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &4959409662547482517
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2769922912735538254}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.012394372, y: 0.0015956049, z: 0.00044563357}
-  m_Center: {x: -0.00008916319, y: 0.0071317567, z: 0.0077312975}
 --- !u!114 &316944610622888330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4032,20 +4049,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2769922912735538254}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -4073,6 +4092,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &6131579213930874189
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2769922912735538254}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.012394372, y: 0.0015956049, z: 0.00044563357}
+  m_Center: {x: -0.00008916319, y: 0.0071317567, z: 0.0077312975}
 --- !u!1 &2772806908933929904
 GameObject:
   m_ObjectHideFlags: 0
@@ -4085,10 +4125,10 @@ GameObject:
   - component: {fileID: 5774963503322773498}
   - component: {fileID: 3278447217096988489}
   - component: {fileID: 5433613995561854035}
-  - component: {fileID: 2501130670620132183}
   - component: {fileID: 6409175091781247642}
   - component: {fileID: 1253157439417935610}
   - component: {fileID: 941932156805477895}
+  - component: {fileID: 4236536389719981933}
   m_Layer: 0
   m_Name: Plank.058 (1)
   m_TagString: Untagged
@@ -4188,27 +4228,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &2501130670620132183
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2772806908933929904}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044562574, y: 0.015919628, z: 0.0027077305}
-  m_Center: {x: -0.007949416, y: 0, z: 0}
 --- !u!114 &6409175091781247642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4230,20 +4249,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2772806908933929904}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -4271,6 +4292,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &4236536389719981933
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2772806908933929904}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044562574, y: 0.015919628, z: 0.0027077305}
+  m_Center: {x: -0.007949416, y: 0, z: 0}
 --- !u!1 &2882054481279735922
 GameObject:
   m_ObjectHideFlags: 0
@@ -4283,10 +4325,10 @@ GameObject:
   - component: {fileID: 7364429381472527101}
   - component: {fileID: 7809116313330486620}
   - component: {fileID: 7071139976625644459}
-  - component: {fileID: 1149848909614405298}
   - component: {fileID: 6527111402907848683}
   - component: {fileID: 1482277578552293768}
   - component: {fileID: 2258358437465592975}
+  - component: {fileID: 220223582782330562}
   m_Layer: 0
   m_Name: Plank.045 (1)
   m_TagString: Untagged
@@ -4386,27 +4428,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &1149848909614405298
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2882054481279735922}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.015919631, y: 0.000445628, z: 0.0027077305}
-  m_Center: {x: -0.00008194707, y: -0.007895723, z: 0}
 --- !u!114 &6527111402907848683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4428,20 +4449,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2882054481279735922}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -4469,6 +4492,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &220223582782330562
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2882054481279735922}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.015919631, y: 0.000445628, z: 0.0027077305}
+  m_Center: {x: -0.00008194707, y: -0.007895723, z: 0}
 --- !u!1 &3020870056684370576
 GameObject:
   m_ObjectHideFlags: 0
@@ -4481,10 +4525,10 @@ GameObject:
   - component: {fileID: 673298789120688047}
   - component: {fileID: 1780693292583321403}
   - component: {fileID: 4541067855421873455}
-  - component: {fileID: 944001628128985669}
   - component: {fileID: 2940805513308269921}
   - component: {fileID: 5187614925143741492}
   - component: {fileID: 2794700441911890353}
+  - component: {fileID: 5139279074650825461}
   m_Layer: 0
   m_Name: Plank.044 (1)
   m_TagString: Untagged
@@ -4584,27 +4628,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &944001628128985669
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3020870056684370576}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.015916182, y: 0.00044894256, z: 0.0026865844}
-  m_Center: {x: -0.0000806693, y: -0.007895724, z: 0.0026701677}
 --- !u!114 &2940805513308269921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4626,20 +4649,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3020870056684370576}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -4667,6 +4692,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &5139279074650825461
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3020870056684370576}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.015916182, y: 0.00044894256, z: 0.0026865844}
+  m_Center: {x: -0.0000806693, y: -0.007895724, z: 0.0026701677}
 --- !u!1 &3258630459214656633
 GameObject:
   m_ObjectHideFlags: 0
@@ -4679,10 +4725,10 @@ GameObject:
   - component: {fileID: 3612194781627891717}
   - component: {fileID: 3656075432632043171}
   - component: {fileID: 57166760291337129}
-  - component: {fileID: 5557539300401855061}
   - component: {fileID: 3781584199058123025}
   - component: {fileID: 2435332003105609745}
   - component: {fileID: 3657783807291336275}
+  - component: {fileID: 4756908662836434563}
   m_Layer: 0
   m_Name: Plank.043 (1)
   m_TagString: Untagged
@@ -4782,27 +4828,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &5557539300401855061
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3258630459214656633}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.015945638, y: 0.00044978308, z: 0.0028705806}
-  m_Center: {x: -0.0000807289, y: -0.007825075, z: 0.0054936837}
 --- !u!114 &3781584199058123025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4824,20 +4849,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3258630459214656633}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -4865,6 +4892,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &4756908662836434563
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3258630459214656633}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.015945638, y: 0.00044978308, z: 0.0028705806}
+  m_Center: {x: -0.0000807289, y: -0.007825075, z: 0.0054936837}
 --- !u!1 &3490833950305190136
 GameObject:
   m_ObjectHideFlags: 0
@@ -4877,10 +4925,10 @@ GameObject:
   - component: {fileID: 8042077874712328572}
   - component: {fileID: 7844998469750264087}
   - component: {fileID: 1929261607966461256}
-  - component: {fileID: 7038026877103916844}
   - component: {fileID: 3511080380357531983}
   - component: {fileID: 7198236377149547909}
   - component: {fileID: 6015574700034578540}
+  - component: {fileID: 1823199899679806889}
   m_Layer: 0
   m_Name: Hinge L 2 (1)
   m_TagString: Untagged
@@ -4980,27 +5028,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &7038026877103916844
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3490833950305190136}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00030769221, y: 0.001703356, z: 0.0018887679}
-  m_Center: {x: -0.008434069, y: 0.0063048145, z: 0.007322052}
 --- !u!114 &3511080380357531983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5022,20 +5049,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3490833950305190136}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -5063,6 +5092,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &1823199899679806889
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3490833950305190136}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00030769221, y: 0.001703356, z: 0.0018887679}
+  m_Center: {x: -0.008434069, y: 0.0063048145, z: 0.007322052}
 --- !u!1 &3829326642168761892
 GameObject:
   m_ObjectHideFlags: 0
@@ -5075,10 +5125,10 @@ GameObject:
   - component: {fileID: 8749380145727058501}
   - component: {fileID: 424788333894471451}
   - component: {fileID: 3143698029214387992}
-  - component: {fileID: 3753541820606048680}
   - component: {fileID: 3965525691721669504}
   - component: {fileID: 9171094293820265392}
   - component: {fileID: 1644678117161009665}
+  - component: {fileID: 8871793273829781638}
   m_Layer: 0
   m_Name: Top (1)
   m_TagString: Untagged
@@ -5178,27 +5228,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &3753541820606048680
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3829326642168761892}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0017057699, y: 0.015944805, z: 0.0004986146}
-  m_Center: {x: -0.0070714885, y: 0.0001371335, z: 0.007839564}
 --- !u!114 &3965525691721669504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5220,20 +5249,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3829326642168761892}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -5261,6 +5292,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &8871793273829781638
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3829326642168761892}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0017057699, y: 0.015944805, z: 0.0004986146}
+  m_Center: {x: -0.0070714885, y: 0.0001371335, z: 0.007839564}
 --- !u!1 &4012065320946301662
 GameObject:
   m_ObjectHideFlags: 0
@@ -5273,10 +5325,10 @@ GameObject:
   - component: {fileID: 1826458070889108495}
   - component: {fileID: 8350621098409705782}
   - component: {fileID: 2170453224139513237}
-  - component: {fileID: 6559668816260383790}
   - component: {fileID: 4017634645232332195}
   - component: {fileID: 628748263872707985}
   - component: {fileID: 8341694033435732667}
+  - component: {fileID: 3782828082184884683}
   m_Layer: 0
   m_Name: Plank.035 (1)
   m_TagString: Untagged
@@ -5376,27 +5428,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &6559668816260383790
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4012065320946301662}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.013474083, y: 0.0004456266, z: 0.012251964}
-  m_Center: {x: 0.0003893776, y: -0.008173961, z: -0.00011749959}
 --- !u!114 &4017634645232332195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5418,20 +5449,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4012065320946301662}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -5459,6 +5492,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &3782828082184884683
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4012065320946301662}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.013474083, y: 0.0004456266, z: 0.012251964}
+  m_Center: {x: 0.0003893776, y: -0.008173961, z: -0.00011749959}
 --- !u!1 &4198091959490039286
 GameObject:
   m_ObjectHideFlags: 0
@@ -5471,10 +5525,10 @@ GameObject:
   - component: {fileID: 5574333852613462842}
   - component: {fileID: 4497543344537725611}
   - component: {fileID: 7565596299851227134}
-  - component: {fileID: 8321855231894082888}
   - component: {fileID: 5602864418798671}
   - component: {fileID: 5526874302753722738}
   - component: {fileID: 1012878925677002429}
+  - component: {fileID: 2004871476753855194}
   m_Layer: 0
   m_Name: Plank.013 (1)
   m_TagString: Untagged
@@ -5574,27 +5628,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &8321855231894082888
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4198091959490039286}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0017057694, y: 0.016951576, z: 0.00044562566}
-  m_Center: {x: 0.006841021, y: 0.00036625232, z: -0.007818254}
 --- !u!114 &5602864418798671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5616,20 +5649,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4198091959490039286}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -5657,6 +5692,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &2004871476753855194
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4198091959490039286}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0017057694, y: 0.016951576, z: 0.00044562566}
+  m_Center: {x: 0.006841021, y: 0.00036625232, z: -0.007818254}
 --- !u!1 &4205232538613067342
 GameObject:
   m_ObjectHideFlags: 0
@@ -5669,10 +5725,10 @@ GameObject:
   - component: {fileID: 8599413596833415648}
   - component: {fileID: 1770253266360699005}
   - component: {fileID: 2519002075950885429}
-  - component: {fileID: 2637343540051339639}
   - component: {fileID: 7995936501717402601}
   - component: {fileID: 4683736934973085308}
   - component: {fileID: 3676862470311323582}
+  - component: {fileID: 7841115311903694770}
   m_Layer: 0
   m_Name: Plank.050 (1)
   m_TagString: Untagged
@@ -5772,27 +5828,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &2637343540051339639
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4205232538613067342}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.015919631, y: 0.00044562752, z: 0.0027077305}
-  m_Center: {x: -0.00008194707, y: 0.0078614, z: 0}
 --- !u!114 &7995936501717402601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5814,20 +5849,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4205232538613067342}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -5855,6 +5892,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &7841115311903694770
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4205232538613067342}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.015919631, y: 0.00044562752, z: 0.0027077305}
+  m_Center: {x: -0.00008194707, y: 0.0078614, z: 0}
 --- !u!1 &4292001745967155076
 GameObject:
   m_ObjectHideFlags: 0
@@ -5867,10 +5925,10 @@ GameObject:
   - component: {fileID: 7528391850302571692}
   - component: {fileID: 3161865640938792959}
   - component: {fileID: 7650748469623495871}
-  - component: {fileID: 4586523006410065611}
   - component: {fileID: 7698681183236085564}
   - component: {fileID: 5656716973144951507}
   - component: {fileID: 2585749616028489742}
+  - component: {fileID: 9192953353116822933}
   m_Layer: 0
   m_Name: Plank.012 (1)
   m_TagString: Untagged
@@ -5970,27 +6028,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &4586523006410065611
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4292001745967155076}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0017057699, y: 0.016951576, z: 0.0004456266}
-  m_Center: {x: -0.0070714885, y: 0.00036625232, z: -0.007818256}
 --- !u!114 &7698681183236085564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6012,20 +6049,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4292001745967155076}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -6053,6 +6092,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &9192953353116822933
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4292001745967155076}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0017057699, y: 0.016951576, z: 0.0004456266}
+  m_Center: {x: -0.0070714885, y: 0.00036625232, z: -0.007818256}
 --- !u!1 &4381057729962471548
 GameObject:
   m_ObjectHideFlags: 0
@@ -6065,10 +6125,10 @@ GameObject:
   - component: {fileID: 7222808299582679690}
   - component: {fileID: 3865713852480549935}
   - component: {fileID: 8384524767725879009}
-  - component: {fileID: 9029580480964839825}
   - component: {fileID: 7188674854829608195}
   - component: {fileID: 5354780585745827285}
   - component: {fileID: 6430374550763102212}
+  - component: {fileID: 6593724412886616024}
   m_Layer: 0
   m_Name: Plank.023 (1)
   m_TagString: Untagged
@@ -6168,27 +6228,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &9029580480964839825
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4381057729962471548}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.016381063, y: 0.00044563404, z: 0.0017057686}
-  m_Center: {x: -0.00022163754, y: 0.008173961, z: 0.0068410193}
 --- !u!114 &7188674854829608195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6210,20 +6249,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4381057729962471548}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -6251,6 +6292,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &6593724412886616024
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4381057729962471548}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.016381063, y: 0.00044563404, z: 0.0017057686}
+  m_Center: {x: -0.00022163754, y: 0.008173961, z: 0.0068410193}
 --- !u!1 &4395308426240624924
 GameObject:
   m_ObjectHideFlags: 0
@@ -6263,10 +6325,10 @@ GameObject:
   - component: {fileID: 3195741741104750800}
   - component: {fileID: 7854608228157115046}
   - component: {fileID: 676262684005276111}
-  - component: {fileID: 1908760041871720886}
   - component: {fileID: 2845326650283791847}
   - component: {fileID: 5336449608315928741}
   - component: {fileID: 1425837849552524645}
+  - component: {fileID: 3806824546787695054}
   m_Layer: 0
   m_Name: Plank.022 (1)
   m_TagString: Untagged
@@ -6366,27 +6428,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &1908760041871720886
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4395308426240624924}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.01695158, y: 0.00044563404, z: 0.0017057691}
-  m_Center: {x: -0.0003662482, y: 0.008173961, z: -0.007071487}
 --- !u!114 &2845326650283791847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6408,20 +6449,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4395308426240624924}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -6449,6 +6492,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &3806824546787695054
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395308426240624924}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.01695158, y: 0.00044563404, z: 0.0017057691}
+  m_Center: {x: -0.0003662482, y: 0.008173961, z: -0.007071487}
 --- !u!1 &4494430473805466612
 GameObject:
   m_ObjectHideFlags: 0
@@ -6461,10 +6525,10 @@ GameObject:
   - component: {fileID: 2300830393174231855}
   - component: {fileID: 4172590833323480639}
   - component: {fileID: 271382295187426406}
-  - component: {fileID: 1135415035409059804}
   - component: {fileID: 3551667528835463208}
   - component: {fileID: 829231484285677416}
   - component: {fileID: 5069556017406331774}
+  - component: {fileID: 3249778513548507130}
   m_Layer: 0
   m_Name: Plank.033 (1)
   m_TagString: Untagged
@@ -6564,27 +6628,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &1135415035409059804
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4494430473805466612}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.016446445, y: 0.00044562752, z: 0.0017057696}
-  m_Center: {x: 0.000250848, y: -0.00818868, z: 0.0068410193}
 --- !u!114 &3551667528835463208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6606,20 +6649,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4494430473805466612}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -6647,6 +6692,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &3249778513548507130
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4494430473805466612}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.016446445, y: 0.00044562752, z: 0.0017057696}
+  m_Center: {x: 0.000250848, y: -0.00818868, z: 0.0068410193}
 --- !u!1 &4546780985057009326
 GameObject:
   m_ObjectHideFlags: 0
@@ -6659,10 +6725,10 @@ GameObject:
   - component: {fileID: 7201512648445033703}
   - component: {fileID: 361524597334517315}
   - component: {fileID: 6154219251689887939}
-  - component: {fileID: 2945191877880137102}
   - component: {fileID: 6490940652412923211}
   - component: {fileID: 7291317265063697806}
   - component: {fileID: 6126070988039968679}
+  - component: {fileID: 5966347805576549323}
   m_Layer: 0
   m_Name: Hinge R 1
   m_TagString: Untagged
@@ -6762,27 +6828,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &2945191877880137102
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4546780985057009326}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0020618662, y: 0.001703356, z: 0.00029501313}
-  m_Center: {x: -0.0075302366, y: -0.006304815, z: 0.008139052}
 --- !u!114 &6490940652412923211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6804,20 +6849,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4546780985057009326}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -6845,6 +6892,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &5966347805576549323
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4546780985057009326}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0020618662, y: 0.001703356, z: 0.00029501313}
+  m_Center: {x: -0.0075302366, y: -0.006304815, z: 0.008139052}
 --- !u!1 &4603849911188753570
 GameObject:
   m_ObjectHideFlags: 0
@@ -6857,10 +6925,10 @@ GameObject:
   - component: {fileID: 3510390264988633200}
   - component: {fileID: 7946942156638295834}
   - component: {fileID: 7095085634868591229}
-  - component: {fileID: 148940274322951036}
   - component: {fileID: 917314210063856243}
   - component: {fileID: 7372602457971852888}
   - component: {fileID: 273606176706405934}
+  - component: {fileID: 5756642789597182486}
   m_Layer: 0
   m_Name: Plank.011 (1)
   m_TagString: Untagged
@@ -6960,27 +7028,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &148940274322951036
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4603849911188753570}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.012394367, y: 0.0015955933, z: 0.00044562752}
-  m_Center: {x: -0.0000891611, y: -0.007131754, z: -0.0077364836}
 --- !u!114 &917314210063856243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7002,20 +7049,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4603849911188753570}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -7043,6 +7092,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &5756642789597182486
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4603849911188753570}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.012394367, y: 0.0015955933, z: 0.00044562752}
+  m_Center: {x: -0.0000891611, y: -0.007131754, z: -0.0077364836}
 --- !u!1 &4660236140702882527
 GameObject:
   m_ObjectHideFlags: 0
@@ -7055,10 +7125,10 @@ GameObject:
   - component: {fileID: 9216156753878724156}
   - component: {fileID: 2172963468671136133}
   - component: {fileID: 4705573369295829975}
-  - component: {fileID: 8411301660712268352}
   - component: {fileID: 7437897593727566648}
   - component: {fileID: 4341301797027061175}
   - component: {fileID: 654511684516627358}
+  - component: {fileID: 4360877666832000262}
   m_Layer: 0
   m_Name: Hinge Shaft L (1)
   m_TagString: Untagged
@@ -7158,27 +7228,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &8411301660712268352
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4660236140702882527}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00023121014, y: 0.0018779534, z: 0.0002312101}
-  m_Center: {x: -0.008427591, y: 0.0063079493, z: 0.008138285}
 --- !u!114 &7437897593727566648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7200,20 +7249,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4660236140702882527}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -7241,6 +7292,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &4360877666832000262
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4660236140702882527}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00023121014, y: 0.0018779534, z: 0.0002312101}
+  m_Center: {x: -0.008427591, y: 0.0063079493, z: 0.008138285}
 --- !u!1 &4751045067229194079
 GameObject:
   m_ObjectHideFlags: 0
@@ -7253,10 +7325,10 @@ GameObject:
   - component: {fileID: 8912605621422343202}
   - component: {fileID: 7369780639974100840}
   - component: {fileID: 8818774221452142932}
-  - component: {fileID: 7732780709123213144}
   - component: {fileID: 8756326363342014462}
   - component: {fileID: 5098065011284402298}
   - component: {fileID: 1037146611470827327}
+  - component: {fileID: 3869914008440198174}
   m_Layer: 0
   m_Name: Plank.016 (1)
   m_TagString: Untagged
@@ -7356,27 +7428,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &7732780709123213144
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4751045067229194079}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.002758489, y: 0.015927901, z: 0.00044562612}
-  m_Center: {x: -0.005735618, y: -0.000017662529, z: -0.007452004}
 --- !u!114 &8756326363342014462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7398,20 +7449,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4751045067229194079}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -7439,6 +7492,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &3869914008440198174
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4751045067229194079}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.002758489, y: 0.015927901, z: 0.00044562612}
+  m_Center: {x: -0.005735618, y: -0.000017662529, z: -0.007452004}
 --- !u!1 &4801461180766751889
 GameObject:
   m_ObjectHideFlags: 0
@@ -7451,10 +7525,10 @@ GameObject:
   - component: {fileID: 65902030847389572}
   - component: {fileID: 1679969770512756236}
   - component: {fileID: 3276674775311733500}
-  - component: {fileID: 7937632394085879708}
   - component: {fileID: 4263791132228018916}
   - component: {fileID: 4901207472570366453}
   - component: {fileID: 6061657836107461140}
+  - component: {fileID: 1979707975452149269}
   m_Layer: 0
   m_Name: Plank.019 (1)
   m_TagString: Untagged
@@ -7554,27 +7628,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &7937632394085879708
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4801461180766751889}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0026865841, y: 0.015916178, z: 0.0004489421}
-  m_Center: {x: 0.0026701684, y: 0.0000012777743, z: -0.0074520037}
 --- !u!114 &4263791132228018916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7596,20 +7649,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4801461180766751889}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -7637,6 +7692,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &1979707975452149269
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4801461180766751889}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0026865841, y: 0.015916178, z: 0.0004489421}
+  m_Center: {x: 0.0026701684, y: 0.0000012777743, z: -0.0074520037}
 --- !u!1 &4862266936225569456
 GameObject:
   m_ObjectHideFlags: 0
@@ -7649,10 +7725,10 @@ GameObject:
   - component: {fileID: 1105735631313029235}
   - component: {fileID: 3595219299870379392}
   - component: {fileID: 7428522327458091379}
-  - component: {fileID: 8144441767331091983}
   - component: {fileID: 8582072305952743252}
   - component: {fileID: 1328072488761802382}
   - component: {fileID: 4167816679879734463}
+  - component: {fileID: 3147417181390797396}
   m_Layer: 0
   m_Name: Hinge L 1
   m_TagString: Untagged
@@ -7752,27 +7828,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &8144441767331091983
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4862266936225569456}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0020618662, y: 0.001703356, z: 0.00029501313}
-  m_Center: {x: -0.0075302366, y: 0.006304815, z: 0.008139052}
 --- !u!114 &8582072305952743252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7794,20 +7849,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4862266936225569456}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -7835,6 +7892,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &3147417181390797396
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4862266936225569456}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0020618662, y: 0.001703356, z: 0.00029501313}
+  m_Center: {x: -0.0075302366, y: 0.006304815, z: 0.008139052}
 --- !u!1 &5183946956818433706
 GameObject:
   m_ObjectHideFlags: 0
@@ -7847,10 +7925,10 @@ GameObject:
   - component: {fileID: 5364878221226703779}
   - component: {fileID: 933669005302938008}
   - component: {fileID: 2592857853510837957}
-  - component: {fileID: 5454388163091464885}
   - component: {fileID: 4791375259718227352}
   - component: {fileID: 1520769439725148557}
   - component: {fileID: 7140954497587922672}
+  - component: {fileID: 6162022875903536592}
   m_Layer: 0
   m_Name: Plank.032 (1)
   m_TagString: Untagged
@@ -7950,27 +8028,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &5454388163091464885
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5183946956818433706}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.01695158, y: 0.00044562752, z: 0.0017057691}
-  m_Center: {x: -0.0000017196871, y: -0.00818868, z: -0.007071487}
 --- !u!114 &4791375259718227352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7992,20 +8049,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5183946956818433706}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -8033,6 +8092,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &6162022875903536592
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5183946956818433706}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.01695158, y: 0.00044562752, z: 0.0017057691}
+  m_Center: {x: -0.0000017196871, y: -0.00818868, z: -0.007071487}
 --- !u!1 &5205083855280290327
 GameObject:
   m_ObjectHideFlags: 0
@@ -8045,10 +8125,10 @@ GameObject:
   - component: {fileID: 4468332582049016730}
   - component: {fileID: 404719211998559691}
   - component: {fileID: 863637618199982600}
-  - component: {fileID: 7836326111127817250}
   - component: {fileID: 8263618769598365978}
   - component: {fileID: 4396207604347014572}
   - component: {fileID: 8137183540587588618}
+  - component: {fileID: 8288095966077202117}
   m_Layer: 0
   m_Name: Plank.021 (1)
   m_TagString: Untagged
@@ -8148,27 +8228,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &7836326111127817250
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5205083855280290327}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0015955945, y: 0.0004456266, z: 0.012394365}
-  m_Center: {x: 0.00713176, y: 0.008092186, z: -0.00008916155}
 --- !u!114 &8263618769598365978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8190,20 +8249,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5205083855280290327}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -8231,6 +8292,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &8288095966077202117
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5205083855280290327}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0015955945, y: 0.0004456266, z: 0.012394365}
+  m_Center: {x: 0.00713176, y: 0.008092186, z: -0.00008916155}
 --- !u!1 &5330614984715969528
 GameObject:
   m_ObjectHideFlags: 0
@@ -8243,10 +8325,10 @@ GameObject:
   - component: {fileID: 2177809319502484309}
   - component: {fileID: 4354068459259728637}
   - component: {fileID: 3933557428598243743}
-  - component: {fileID: 2960457606580123687}
   - component: {fileID: 415946416349243636}
   - component: {fileID: 4455612440978992194}
   - component: {fileID: 395782931739408985}
+  - component: {fileID: 4090469737441669077}
   m_Layer: 0
   m_Name: Plank.056 (1)
   m_TagString: Untagged
@@ -8346,27 +8428,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &2960457606580123687
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5330614984715969528}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044978363, y: 0.015945634, z: 0.0028705806}
-  m_Center: {x: -0.008020065, y: 0.0000012181697, z: 0.0054936847}
 --- !u!114 &415946416349243636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8388,20 +8449,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5330614984715969528}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -8429,6 +8492,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &4090469737441669077
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5330614984715969528}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044978363, y: 0.015945634, z: 0.0028705806}
+  m_Center: {x: -0.008020065, y: 0.0000012181697, z: 0.0054936847}
 --- !u!1 &5540241599032527645
 GameObject:
   m_ObjectHideFlags: 0
@@ -8441,10 +8525,10 @@ GameObject:
   - component: {fileID: 2490419753988013373}
   - component: {fileID: 862408528866732890}
   - component: {fileID: 140223109563286266}
-  - component: {fileID: 7966571281835835503}
   - component: {fileID: 4807461986521688564}
   - component: {fileID: 8013996705312796105}
   - component: {fileID: 7557430000125474114}
+  - component: {fileID: 9125273907964954456}
   m_Layer: 0
   m_Name: Plank.036 (1)
   m_TagString: Untagged
@@ -8544,27 +8628,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &7966571281835835503
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5540241599032527645}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044562668, y: 0.0015955933, z: 0.012394365}
-  m_Center: {x: 0.008092191, y: -0.007131754, z: -0.00008916155}
 --- !u!114 &4807461986521688564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8586,20 +8649,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5540241599032527645}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -8627,6 +8692,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &9125273907964954456
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5540241599032527645}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044562668, y: 0.0015955933, z: 0.012394365}
+  m_Center: {x: 0.008092191, y: -0.007131754, z: -0.00008916155}
 --- !u!1 &5654897007469620188
 GameObject:
   m_ObjectHideFlags: 0
@@ -8639,10 +8725,10 @@ GameObject:
   - component: {fileID: 2823699448292753154}
   - component: {fileID: 1546385819900675134}
   - component: {fileID: 1282018296717382989}
-  - component: {fileID: 632754518425291699}
   - component: {fileID: 6668342030524410869}
   - component: {fileID: 873198539262108634}
   - component: {fileID: 2343739922058988409}
+  - component: {fileID: 3823418007148057486}
   m_Layer: 0
   m_Name: Plank.047 (1)
   m_TagString: Untagged
@@ -8742,27 +8828,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &632754518425291699
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5654897007469620188}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0159357, y: 0.00044562752, z: 0.00280722}
-  m_Center: {x: -0.00008194707, y: 0.0078614, z: -0.0028036223}
 --- !u!114 &6668342030524410869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8784,20 +8849,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5654897007469620188}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -8825,6 +8892,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &3823418007148057486
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5654897007469620188}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0159357, y: 0.00044562752, z: 0.00280722}
+  m_Center: {x: -0.00008194707, y: 0.0078614, z: -0.0028036223}
 --- !u!1 &5773543059264399895
 GameObject:
   m_ObjectHideFlags: 0
@@ -8837,10 +8925,10 @@ GameObject:
   - component: {fileID: 8124498324831434995}
   - component: {fileID: 1122261133041802437}
   - component: {fileID: 305847966840808846}
-  - component: {fileID: 7908891744157558634}
   - component: {fileID: 4559814474632027561}
   - component: {fileID: 2371953818785376490}
   - component: {fileID: 4166333234206175266}
+  - component: {fileID: 4881047191647168804}
   m_Layer: 0
   m_Name: Plank.026 (1)
   m_TagString: Untagged
@@ -8940,27 +9028,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &7908891744157558634
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5773543059264399895}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044562668, y: 0.0015955938, z: 0.012394365}
-  m_Center: {x: -0.008092189, y: 0.0071317567, z: -0.00008916155}
 --- !u!114 &4559814474632027561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8982,20 +9049,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5773543059264399895}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -9023,6 +9092,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &4881047191647168804
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5773543059264399895}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044562668, y: 0.0015955938, z: 0.012394365}
+  m_Center: {x: -0.008092189, y: 0.0071317567, z: -0.00008916155}
 --- !u!1 &5860442057640212849
 GameObject:
   m_ObjectHideFlags: 0
@@ -9035,10 +9125,10 @@ GameObject:
   - component: {fileID: 5875817867319725705}
   - component: {fileID: 6271600601803595224}
   - component: {fileID: 5974760810672195999}
-  - component: {fileID: 2594363971974565580}
   - component: {fileID: 798093844670219390}
   - component: {fileID: 6344538517435439682}
   - component: {fileID: 5904532885324390392}
+  - component: {fileID: 5949375654128055936}
   m_Layer: 0
   m_Name: Plank.003
   m_TagString: Untagged
@@ -9138,27 +9228,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &2594363971974565580
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5860442057640212849}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0017057755, y: 0.015944816, z: 0.00049861416}
-  m_Center: {x: 0.0068410235, y: 0.00013713024, z: 0.007839562}
 --- !u!114 &798093844670219390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9180,20 +9249,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5860442057640212849}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -9221,6 +9292,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &5949375654128055936
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5860442057640212849}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0017057755, y: 0.015944816, z: 0.00049861416}
+  m_Center: {x: 0.0068410235, y: 0.00013713024, z: 0.007839562}
 --- !u!1 &5881545343580899892
 GameObject:
   m_ObjectHideFlags: 0
@@ -9233,10 +9325,10 @@ GameObject:
   - component: {fileID: 3947762787258779153}
   - component: {fileID: 1008276832521476716}
   - component: {fileID: 1814335446756076803}
-  - component: {fileID: 2466809191451923058}
   - component: {fileID: 2800905327884599112}
   - component: {fileID: 992508093888525250}
   - component: {fileID: 1808167492988196267}
+  - component: {fileID: 307669399262611704}
   m_Layer: 0
   m_Name: Plank.001
   m_TagString: Untagged
@@ -9336,27 +9428,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &2466809191451923058
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5881545343580899892}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.002684489, y: 0.015915837, z: 0.00044893837}
-  m_Center: {x: 0.0026701735, y: -0.0000009266658, z: 0.0074468167}
 --- !u!114 &2800905327884599112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9378,20 +9449,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5881545343580899892}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -9419,6 +9492,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &307669399262611704
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5881545343580899892}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.002684489, y: 0.015915837, z: 0.00044893837}
+  m_Center: {x: 0.0026701735, y: -0.0000009266658, z: 0.0074468167}
 --- !u!1 &6016882054668819318
 GameObject:
   m_ObjectHideFlags: 0
@@ -9431,10 +9525,10 @@ GameObject:
   - component: {fileID: 7088398075307918824}
   - component: {fileID: 1653270710982341265}
   - component: {fileID: 6849458977112490346}
-  - component: {fileID: 5209184644938134071}
   - component: {fileID: 6131568319524743383}
   - component: {fileID: 8807853429735185396}
   - component: {fileID: 4894722193479407420}
+  - component: {fileID: 1746986192789852279}
   m_Layer: 0
   m_Name: Plank.038 (1)
   m_TagString: Untagged
@@ -9534,27 +9628,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &5209184644938134071
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6016882054668819318}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044562668, y: 0.016854264, z: 0.0017057696}
-  m_Center: {x: 0.008173963, y: 0.0004518399, z: 0.0068410183}
 --- !u!114 &6131568319524743383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9576,20 +9649,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6016882054668819318}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -9617,6 +9692,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &1746986192789852279
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6016882054668819318}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044562668, y: 0.016854264, z: 0.0017057696}
+  m_Center: {x: 0.008173963, y: 0.0004518399, z: 0.0068410183}
 --- !u!1 &6027108758435109415
 GameObject:
   m_ObjectHideFlags: 0
@@ -9629,10 +9725,10 @@ GameObject:
   - component: {fileID: 1016507363804579145}
   - component: {fileID: 4541017508585322627}
   - component: {fileID: 729983814478347817}
-  - component: {fileID: 8764650611691171420}
   - component: {fileID: 6760253503461630713}
   - component: {fileID: 3275473075791417002}
   - component: {fileID: 2468709101630865496}
+  - component: {fileID: 5523065208720494621}
   m_Layer: 0
   m_Name: Plank.037 (1)
   m_TagString: Untagged
@@ -9732,27 +9828,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &8764650611691171420
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6027108758435109415}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044562668, y: 0.016951576, z: 0.0017057691}
-  m_Center: {x: 0.008173963, y: 0.00036625232, z: -0.007071487}
 --- !u!114 &6760253503461630713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9774,20 +9849,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6027108758435109415}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -9815,6 +9892,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &5523065208720494621
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6027108758435109415}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044562668, y: 0.016951576, z: 0.0017057691}
+  m_Center: {x: 0.008173963, y: 0.00036625232, z: -0.007071487}
 --- !u!1 &6045930199611370010
 GameObject:
   m_ObjectHideFlags: 0
@@ -9827,10 +9925,10 @@ GameObject:
   - component: {fileID: 2480359214328273789}
   - component: {fileID: 4678128354193409504}
   - component: {fileID: 1135889371159360363}
-  - component: {fileID: 5202608711758820204}
   - component: {fileID: 3166023095124744143}
   - component: {fileID: 3938906120743685920}
   - component: {fileID: 8013079007955924076}
+  - component: {fileID: 2396756578389486620}
   m_Layer: 0
   m_Name: Plank.017 (1)
   m_TagString: Untagged
@@ -9930,27 +10028,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &5202608711758820204
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6045930199611370010}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.002807221, y: 0.015935697, z: 0.0004456266}
-  m_Center: {x: -0.0028036225, y: 0, z: -0.0074520037}
 --- !u!114 &3166023095124744143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9972,20 +10049,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6045930199611370010}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -10013,6 +10092,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &2396756578389486620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6045930199611370010}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.002807221, y: 0.015935697, z: 0.0004456266}
+  m_Center: {x: -0.0028036225, y: 0, z: -0.0074520037}
 --- !u!1 &6179922527880152931
 GameObject:
   m_ObjectHideFlags: 0
@@ -10025,10 +10125,10 @@ GameObject:
   - component: {fileID: 5235346463971223990}
   - component: {fileID: 2507853367541623812}
   - component: {fileID: 3763165025503197711}
-  - component: {fileID: 6859659775138449942}
   - component: {fileID: 5612206057319127020}
   - component: {fileID: 2308031194208195925}
   - component: {fileID: 8657417736724189628}
+  - component: {fileID: 5942816212069163499}
   m_Layer: 0
   m_Name: Plank.046 (1)
   m_TagString: Untagged
@@ -10128,27 +10228,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &6859659775138449942
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6179922527880152931}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.015927905, y: 0.00044562752, z: 0.002758488}
-  m_Center: {x: -0.000099609606, y: 0.0078614, z: -0.005735617}
 --- !u!114 &5612206057319127020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10170,20 +10249,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6179922527880152931}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -10211,6 +10292,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &5942816212069163499
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6179922527880152931}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.015927905, y: 0.00044562752, z: 0.002758488}
+  m_Center: {x: -0.000099609606, y: 0.0078614, z: -0.005735617}
 --- !u!1 &6524106180926370483
 GameObject:
   m_ObjectHideFlags: 0
@@ -10223,10 +10325,10 @@ GameObject:
   - component: {fileID: 8865393509160902612}
   - component: {fileID: 9189322858343026647}
   - component: {fileID: 7203555785708482566}
-  - component: {fileID: 7592612944976710837}
   - component: {fileID: 4960314702655950839}
   - component: {fileID: 921630262623688199}
   - component: {fileID: 3241921972073414974}
+  - component: {fileID: 6522429951961989821}
   m_Layer: 0
   m_Name: Plank.053 (1)
   m_TagString: Untagged
@@ -10326,27 +10428,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &7592612944976710837
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6524106180926370483}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0004497827, y: 0.015945634, z: 0.002870581}
-  m_Center: {x: 0.007737063, y: 0.0000012181697, z: 0.0054936847}
 --- !u!114 &4960314702655950839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10368,20 +10449,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6524106180926370483}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -10409,6 +10492,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &6522429951961989821
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6524106180926370483}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0004497827, y: 0.015945634, z: 0.002870581}
+  m_Center: {x: 0.007737063, y: 0.0000012181697, z: 0.0054936847}
 --- !u!1 &6654787631441827994
 GameObject:
   m_ObjectHideFlags: 0
@@ -10421,10 +10525,10 @@ GameObject:
   - component: {fileID: 260663124771148634}
   - component: {fileID: 8577407523639348564}
   - component: {fileID: 8059590319976622547}
-  - component: {fileID: 8557172234114105006}
   - component: {fileID: 3591063084607258147}
   - component: {fileID: 4202640774207562151}
   - component: {fileID: 698344212155496532}
+  - component: {fileID: 3041012956735173154}
   m_Layer: 0
   m_Name: Plank.054 (1)
   m_TagString: Untagged
@@ -10524,27 +10628,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &8557172234114105006
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6654787631441827994}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044562574, y: 0.015927901, z: 0.002758488}
-  m_Center: {x: -0.007949416, y: -0.000017662529, z: -0.005735618}
 --- !u!114 &3591063084607258147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10566,20 +10649,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6654787631441827994}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -10607,6 +10692,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &3041012956735173154
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6654787631441827994}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044562574, y: 0.015927901, z: 0.002758488}
+  m_Center: {x: -0.007949416, y: -0.000017662529, z: -0.005735618}
 --- !u!1 &7224369312890344194
 GameObject:
   m_ObjectHideFlags: 0
@@ -10619,10 +10725,10 @@ GameObject:
   - component: {fileID: 620977611239744010}
   - component: {fileID: 1803165829836364927}
   - component: {fileID: 4565950251849997379}
-  - component: {fileID: 3440703342298829785}
   - component: {fileID: 2224393734191180381}
   - component: {fileID: 1517490688474869156}
   - component: {fileID: 5285910350100147846}
+  - component: {fileID: 3485688815906980526}
   m_Layer: 0
   m_Name: Plank.024 (1)
   m_TagString: Untagged
@@ -10722,27 +10828,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &3440703342298829785
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7224369312890344194}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0016497923, y: 0.00044562752, z: 0.012401076}
-  m_Center: {x: -0.0075959894, y: 0.008092193, z: -0.0001828584}
 --- !u!114 &2224393734191180381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10764,20 +10849,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7224369312890344194}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -10805,6 +10892,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &3485688815906980526
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7224369312890344194}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0016497923, y: 0.00044562752, z: 0.012401076}
+  m_Center: {x: -0.0075959894, y: 0.008092193, z: -0.0001828584}
 --- !u!1 &7229839137994057439
 GameObject:
   m_ObjectHideFlags: 0
@@ -10817,10 +10925,10 @@ GameObject:
   - component: {fileID: 5315783303624384505}
   - component: {fileID: 8302345545417201942}
   - component: {fileID: 5738301733292146972}
-  - component: {fileID: 5171116001170400349}
   - component: {fileID: 7129020828538209305}
   - component: {fileID: 5129593100078466006}
   - component: {fileID: 1540283069657965076}
+  - component: {fileID: 3703715756047842210}
   m_Layer: 0
   m_Name: Plank.042 (1)
   m_TagString: Untagged
@@ -10920,27 +11028,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &5171116001170400349
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7229839137994057439}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0159357, y: 0.000445628, z: 0.00280722}
-  m_Center: {x: -0.00008194754, y: -0.007895723, z: -0.0028036223}
 --- !u!114 &7129020828538209305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10962,20 +11049,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7229839137994057439}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -11003,6 +11092,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &3703715756047842210
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7229839137994057439}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0159357, y: 0.000445628, z: 0.00280722}
+  m_Center: {x: -0.00008194754, y: -0.007895723, z: -0.0028036223}
 --- !u!1 &7242257509783309054
 GameObject:
   m_ObjectHideFlags: 0
@@ -11015,10 +11125,10 @@ GameObject:
   - component: {fileID: 1947064001846999040}
   - component: {fileID: 5431581522308788274}
   - component: {fileID: 6061271786044874344}
-  - component: {fileID: 231039339864877754}
   - component: {fileID: 2975304529396853594}
   - component: {fileID: 76829493059047977}
   - component: {fileID: 7391942600855814571}
+  - component: {fileID: 6553740635277388121}
   m_Layer: 0
   m_Name: Plank.039 (1)
   m_TagString: Untagged
@@ -11118,27 +11228,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &231039339864877754
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7242257509783309054}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044562668, y: 0.001649791, z: 0.0123866275}
-  m_Center: {x: 0.008092191, y: 0.007874423, z: -0.00019008291}
 --- !u!114 &2975304529396853594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11160,20 +11249,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7242257509783309054}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -11201,6 +11292,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &6553740635277388121
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7242257509783309054}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044562668, y: 0.001649791, z: 0.0123866275}
+  m_Center: {x: 0.008092191, y: 0.007874423, z: -0.00019008291}
 --- !u!1 &7516180914664149488
 GameObject:
   m_ObjectHideFlags: 0
@@ -11213,10 +11325,10 @@ GameObject:
   - component: {fileID: 4880309643005387093}
   - component: {fileID: 7222636934203062854}
   - component: {fileID: 6151769014541230052}
-  - component: {fileID: 8704431530677720846}
   - component: {fileID: 6850244726326096897}
   - component: {fileID: 4721535526568181592}
   - component: {fileID: 3294856017128111593}
+  - component: {fileID: 6027568176090552668}
   m_Layer: 0
   m_Name: Plank.060 (1)
   m_TagString: Untagged
@@ -11316,27 +11428,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &8704431530677720846
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7516180914664149488}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044562668, y: 0.015919628, z: 0.0027077305}
-  m_Center: {x: 0.007807711, y: 0, z: 0}
 --- !u!114 &6850244726326096897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11358,20 +11449,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7516180914664149488}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -11399,6 +11492,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &6027568176090552668
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7516180914664149488}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044562668, y: 0.015919628, z: 0.0027077305}
+  m_Center: {x: 0.007807711, y: 0, z: 0}
 --- !u!1 &7845030425322236143
 GameObject:
   m_ObjectHideFlags: 0
@@ -11411,10 +11525,10 @@ GameObject:
   - component: {fileID: 4122868265248274638}
   - component: {fileID: 4057175656928348652}
   - component: {fileID: 2148706370126178995}
-  - component: {fileID: 8807104822167151982}
   - component: {fileID: 8049085411757523991}
   - component: {fileID: 1090983523804764052}
   - component: {fileID: 1950786587078418991}
+  - component: {fileID: 2257960915021687845}
   m_Layer: 0
   m_Name: Plank.059 (1)
   m_TagString: Untagged
@@ -11514,27 +11628,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &8807104822167151982
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7845030425322236143}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044894312, y: 0.015916178, z: 0.0026865841}
-  m_Center: {x: 0.0078077116, y: 0.0000012777743, z: 0.002670168}
 --- !u!114 &8049085411757523991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11556,20 +11649,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7845030425322236143}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -11597,6 +11692,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &2257960915021687845
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7845030425322236143}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044894312, y: 0.015916178, z: 0.0026865841}
+  m_Center: {x: 0.0078077116, y: 0.0000012777743, z: 0.002670168}
 --- !u!1 &8150237176009022538
 GameObject:
   m_ObjectHideFlags: 0
@@ -11609,10 +11725,10 @@ GameObject:
   - component: {fileID: 158083536398937379}
   - component: {fileID: 6236817112314467996}
   - component: {fileID: 1417311811149735606}
-  - component: {fileID: 305536728870382116}
   - component: {fileID: 2537340455219354847}
   - component: {fileID: 7026880421796183867}
   - component: {fileID: 1284428559829557559}
+  - component: {fileID: 838168665279416161}
   m_Layer: 0
   m_Name: Plank.004
   m_TagString: Untagged
@@ -11712,27 +11828,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &305536728870382116
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8150237176009022538}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.012437379, y: 0.0015508758, z: 0.000495389}
-  m_Center: {x: -0.00021011173, y: -0.006917113, z: 0.0077594067}
 --- !u!114 &2537340455219354847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11754,20 +11849,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8150237176009022538}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -11795,6 +11892,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &838168665279416161
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8150237176009022538}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.012437379, y: 0.0015508758, z: 0.000495389}
+  m_Center: {x: -0.00021011173, y: -0.006917113, z: 0.0077594067}
 --- !u!1 &8186535313349003732
 GameObject:
   m_ObjectHideFlags: 0
@@ -11807,10 +11925,10 @@ GameObject:
   - component: {fileID: 1088690943485125627}
   - component: {fileID: 6971812237911037803}
   - component: {fileID: 1753877200192728207}
-  - component: {fileID: 1139544206236087349}
   - component: {fileID: 2407451222300643205}
   - component: {fileID: 8292863941713301363}
   - component: {fileID: 5894729428731761272}
+  - component: {fileID: 2542353171465463674}
   m_Layer: 0
   m_Name: Plank.006
   m_TagString: Untagged
@@ -11910,27 +12028,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &1139544206236087349
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8186535313349003732}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0027584895, y: 0.01592791, z: 0.00044562612}
-  m_Center: {x: -0.00573562, y: 0.000017662529, z: 0.0074468176}
 --- !u!114 &2407451222300643205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11952,20 +12049,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8186535313349003732}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -11993,6 +12092,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &2542353171465463674
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186535313349003732}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0027584895, y: 0.01592791, z: 0.00044562612}
+  m_Center: {x: -0.00573562, y: 0.000017662529, z: 0.0074468176}
 --- !u!1 &8297623459281717625
 GameObject:
   m_ObjectHideFlags: 0
@@ -12005,10 +12125,10 @@ GameObject:
   - component: {fileID: 8265722340713239810}
   - component: {fileID: 3809969224642896714}
   - component: {fileID: 4583856520891904716}
-  - component: {fileID: 7232381430309024677}
   - component: {fileID: 8269139847372535617}
   - component: {fileID: 6969324268414130568}
   - component: {fileID: 3396301802850947554}
+  - component: {fileID: 2435484215972158731}
   m_Layer: 0
   m_Name: Plank.031 (1)
   m_TagString: Untagged
@@ -12108,27 +12228,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &7232381430309024677
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8297623459281717625}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0015955935, y: 0.0004456266, z: 0.012394365}
-  m_Center: {x: -0.0071317563, y: -0.008092189, z: -0.00008916155}
 --- !u!114 &8269139847372535617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12150,20 +12249,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8297623459281717625}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -12191,6 +12292,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &2435484215972158731
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8297623459281717625}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0015955935, y: 0.0004456266, z: 0.012394365}
+  m_Center: {x: -0.0071317563, y: -0.008092189, z: -0.00008916155}
 --- !u!1 &8316959394630310953
 GameObject:
   m_ObjectHideFlags: 0
@@ -12203,10 +12325,10 @@ GameObject:
   - component: {fileID: 2245930742147668228}
   - component: {fileID: 8958801720775422416}
   - component: {fileID: 5019240300007752380}
-  - component: {fileID: 7544693830500674407}
   - component: {fileID: 2586388837071376483}
   - component: {fileID: 7326947214114024854}
   - component: {fileID: 8219887981629791869}
+  - component: {fileID: 7698733945332935683}
   m_Layer: 0
   m_Name: Hinge R 2 (1)
   m_TagString: Untagged
@@ -12306,27 +12428,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &7544693830500674407
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8316959394630310953}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00030769221, y: 0.001703356, z: 0.0018887679}
-  m_Center: {x: -0.008434069, y: -0.0063048145, z: 0.007322052}
 --- !u!114 &2586388837071376483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12348,20 +12449,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8316959394630310953}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -12389,6 +12492,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &7698733945332935683
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8316959394630310953}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00030769221, y: 0.001703356, z: 0.0018887679}
+  m_Center: {x: -0.008434069, y: -0.0063048145, z: 0.007322052}
 --- !u!1 &8332400805376155084
 GameObject:
   m_ObjectHideFlags: 0
@@ -12401,10 +12525,10 @@ GameObject:
   - component: {fileID: 6396264757983825793}
   - component: {fileID: 4974969931836163148}
   - component: {fileID: 1991527371479188133}
-  - component: {fileID: 5854902430601957053}
   - component: {fileID: 1861208755655139914}
   - component: {fileID: 8576800417886946308}
   - component: {fileID: 5407865696535052605}
+  - component: {fileID: 6229557955620514089}
   m_Layer: 0
   m_Name: Plank.030 (1)
   m_TagString: Untagged
@@ -12504,27 +12628,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &5854902430601957053
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8332400805376155084}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044563133, y: 0.01347408, z: 0.012251964}
-  m_Center: {x: -0.008173963, y: -0.00038937543, z: -0.00011749959}
 --- !u!114 &1861208755655139914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12546,20 +12649,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8332400805376155084}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -12587,6 +12692,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &6229557955620514089
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332400805376155084}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044563133, y: 0.01347408, z: 0.012251964}
+  m_Center: {x: -0.008173963, y: -0.00038937543, z: -0.00011749959}
 --- !u!1 &8586481646968371669
 GameObject:
   m_ObjectHideFlags: 0
@@ -12599,10 +12725,10 @@ GameObject:
   - component: {fileID: 4781878091722905094}
   - component: {fileID: 4236390716926572513}
   - component: {fileID: 4861122606424469199}
-  - component: {fileID: 4242249499519632244}
   - component: {fileID: 7810828246761991839}
   - component: {fileID: 7739432939751698480}
   - component: {fileID: 667355501019976197}
+  - component: {fileID: 178839707256596477}
   m_Layer: 0
   m_Name: Plank.005
   m_TagString: Untagged
@@ -12702,27 +12828,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &4242249499519632244
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8586481646968371669}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0122519685, y: 0.0134740835, z: 0.00044562892}
-  m_Center: {x: -0.00011749705, y: -0.00038937776, z: 0.007813069}
 --- !u!114 &7810828246761991839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12744,20 +12849,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8586481646968371669}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -12785,6 +12892,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &178839707256596477
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586481646968371669}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0122519685, y: 0.0134740835, z: 0.00044562892}
+  m_Center: {x: -0.00011749705, y: -0.00038937776, z: 0.007813069}
 --- !u!1 &8754233409984048562
 GameObject:
   m_ObjectHideFlags: 0
@@ -12797,10 +12925,10 @@ GameObject:
   - component: {fileID: 186830330808853999}
   - component: {fileID: 2048022874022437237}
   - component: {fileID: 5033248849891797600}
-  - component: {fileID: 2246755790100381221}
   - component: {fileID: 3218002723606421763}
   - component: {fileID: 4116179731889138919}
   - component: {fileID: 9002247336665202550}
+  - component: {fileID: 5543886908651248533}
   m_Layer: 0
   m_Name: Plank.008
   m_TagString: Untagged
@@ -12900,27 +13028,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &2246755790100381221
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8754233409984048562}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0028669816, y: 0.015945084, z: 0.00044977936}
-  m_Center: {x: 0.0054936856, y: -0.000002465676, z: 0.0073761684}
 --- !u!114 &3218002723606421763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12942,20 +13049,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8754233409984048562}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -12983,6 +13092,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &5543886908651248533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754233409984048562}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0028669816, y: 0.015945084, z: 0.00044977936}
+  m_Center: {x: 0.0054936856, y: -0.000002465676, z: 0.0073761684}
 --- !u!1 &9053115999661325785
 GameObject:
   m_ObjectHideFlags: 0
@@ -12995,10 +13125,10 @@ GameObject:
   - component: {fileID: 1982436446688241901}
   - component: {fileID: 8160777022692550700}
   - component: {fileID: 7744294469966511048}
-  - component: {fileID: 6948233051362398732}
   - component: {fileID: 4953222559901237050}
   - component: {fileID: 8849196802112027746}
   - component: {fileID: 4191201676201678344}
+  - component: {fileID: 2032226099062551285}
   m_Layer: 0
   m_Name: Plank.049 (1)
   m_TagString: Untagged
@@ -13098,27 +13228,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &6948233051362398732
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9053115999661325785}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.01591618, y: 0.00044894256, z: 0.0026865844}
-  m_Center: {x: -0.00008066883, y: 0.0078614, z: 0.0026701677}
 --- !u!114 &4953222559901237050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13140,20 +13249,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9053115999661325785}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -13181,6 +13292,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &2032226099062551285
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9053115999661325785}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.01591618, y: 0.00044894256, z: 0.0026865844}
+  m_Center: {x: -0.00008066883, y: 0.0078614, z: 0.0026701677}
 --- !u!1 &9057818999016000246
 GameObject:
   m_ObjectHideFlags: 0
@@ -13193,10 +13325,10 @@ GameObject:
   - component: {fileID: 2580257294152311139}
   - component: {fileID: 4822082477206565913}
   - component: {fileID: 4557835668300662230}
-  - component: {fileID: 5227409643227832555}
   - component: {fileID: 4815754669719249806}
   - component: {fileID: 62966304174087855}
   - component: {fileID: 2510966643511107561}
+  - component: {fileID: 7648512235481740131}
   m_Layer: 0
   m_Name: Plank.052 (1)
   m_TagString: Untagged
@@ -13296,27 +13428,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &5227409643227832555
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9057818999016000246}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044562668, y: 0.015935697, z: 0.0028072202}
-  m_Center: {x: 0.007807711, y: 0, z: -0.0028036227}
 --- !u!114 &4815754669719249806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13338,20 +13449,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9057818999016000246}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -13379,6 +13492,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &7648512235481740131
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9057818999016000246}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044562668, y: 0.015935697, z: 0.0028072202}
+  m_Center: {x: 0.007807711, y: 0, z: -0.0028036227}
 --- !u!1 &9172637873027455957
 GameObject:
   m_ObjectHideFlags: 0
@@ -13391,10 +13525,10 @@ GameObject:
   - component: {fileID: 4026386421133175300}
   - component: {fileID: 2848533818846224354}
   - component: {fileID: 3467577054211693496}
-  - component: {fileID: 1497931718711139970}
   - component: {fileID: 1332523453249234920}
   - component: {fileID: 8233581967741822575}
   - component: {fileID: 9008212221291705719}
+  - component: {fileID: 793514698765392869}
   m_Layer: 0
   m_Name: Plank.051 (1)
   m_TagString: Untagged
@@ -13494,27 +13628,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &1497931718711139970
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9172637873027455957}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00044562668, y: 0.015927901, z: 0.002758488}
-  m_Center: {x: 0.007807711, y: -0.000017662529, z: -0.005735618}
 --- !u!114 &1332523453249234920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13536,20 +13649,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9172637873027455957}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fa4cd73eaad7c4f8bf108d2c72450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disappearOnDestroy: []
-  createOnDestroy: []
-  spawnFragmentsWithWorldScale: 0
+  createOnDestroy:
+  - {fileID: 4887271293771502227, guid: 84adedee6e6394748b6fa6b392005cfb, type: 3}
+  spawnFragmentsWithWorldScale: 1
+  noParent: 1
   fragmentScaleMultiplier: 1
   destroySelf: 1
-  DestroyCreated: 0
-  destroyCreatedTimer: 15
+  DestroyCreated: 1
+  destroyCreatedTimer: 5
   destroyFromForce: 1
-  forceThreshold: 5
+  forceThreshold: 80
   inheritVelocity: 1
   pushFragmentsOnDestroy: 1
   explodeFragmentsOnDestroy: 1
@@ -13577,6 +13692,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+--- !u!65 &793514698765392869
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9172637873027455957}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044562668, y: 0.015927901, z: 0.002758488}
+  m_Center: {x: 0.007807711, y: -0.000017662529, z: -0.005735618}
 --- !u!1001 &4323524305898022245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13716,6 +13852,7 @@ MonoBehaviour:
   createOnDestroy:
   - {fileID: 11857097426982452}
   spawnFragmentsWithWorldScale: 0
+  noParent: 0
   fragmentScaleMultiplier: 1
   destroySelf: 0
   DestroyCreated: 0

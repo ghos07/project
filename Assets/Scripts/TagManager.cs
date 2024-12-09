@@ -45,6 +45,12 @@ public readonly struct TagChangedContext
     }
 }
 
+
+/// <summary>
+/// Tag manager for objects based on an enum. Allows for adding, removing, and checking tags.
+/// To use string based tags, use StringTagManager.
+/// Both can be used on the same object, but it is not recommended to avoid confusion and convolution.
+/// </summary>
 public class TagManager : MonoBehaviour
 {
     [SerializeField] private List<Tag> tags = new();
@@ -514,6 +520,156 @@ public class TagManager : MonoBehaviour
         {
             Debug.Log("TagManager: Object [" + other + "] does not have a TagManager component, adding one now.");
             AddTags(other.AddComponent<TagManager>());
+        }
+    }
+
+    public static TagManager GetTagManager(GameObject gameObject)
+    {
+        if (gameObject.TryGetComponent(out TagManager tagManager))
+        {
+            return tagManager;
+        }
+        else
+        {
+            Debug.Log("TagManager: Object [" + gameObject + "] does not have a TagManager component, adding one now.");
+            return gameObject.AddComponent<TagManager>();
+        }
+    }
+}
+
+/// <summary>
+/// Context of the tag change.
+/// </summary>
+public readonly struct StringTagChangedContext
+{
+    public readonly TagChangeType ChangeType;
+    public readonly string[] OldTags;
+    public readonly string[] NewTags;
+    public readonly string[] AddedTags;
+    public readonly string[] RemovedTags;
+
+    public StringTagChangedContext(TagChangeType changeType, string[] oldTags, string[] newTags)
+    {
+        ChangeType = changeType;
+        OldTags = oldTags;
+        NewTags = newTags;
+        AddedTags = newTags.Except(oldTags).ToArray();
+        RemovedTags = oldTags.Except(newTags).ToArray();
+    }
+}
+
+/// <summary>
+/// Tag manager for objects based on strings. Allows for adding, removing, and checking tags.
+/// To use enum based tags, use TagManager.
+/// Both can be used on the same object, but it is not recommended to avoid confusion and convolution.
+/// </summary>
+public class StringTagManager : MonoBehaviour
+{
+    [SerializeField] private List<string> tags = new();
+    public event System.Action<StringTagChangedContext> OnTagAdded;
+    public event System.Action<StringTagChangedContext> OnTagRemoved;
+    public event System.Action<StringTagChangedContext> OnTagsCleared;
+    public event System.Action<StringTagChangedContext> OnTagsSet;
+    public event System.Action<StringTagChangedContext> OnTagChanged;
+
+    public bool HasTag(string tag) => tags.Contains(tag);
+
+    public bool HasAllTags(params string[] tags) => tags.All(tag => this.tags.Contains(tag));
+
+    public bool HasAnyTags(params string[] tags) => this.tags.Intersect(tags).Any();
+
+    public void AddTag(string tag)
+    {
+        if (!tags.Contains(tag))
+        {
+            var oldTags = tags.ToArray();
+            tags.Add(tag);
+            var newTags = tags.ToArray();
+            var context = new StringTagChangedContext(TagChangeType.Added, oldTags, newTags);
+            OnTagAdded?.Invoke(context);
+            OnTagChanged?.Invoke(context);
+        }
+    }
+
+    public void AddTags(params string[] tags)
+    {
+        foreach (var tag in tags)
+        {
+            AddTag(tag);
+        }
+    }
+
+    public void RemoveTag(string tag)
+    {
+        if (tags.Contains(tag))
+        {
+            var oldTags = tags.ToArray();
+            tags.Remove(tag);
+            var newTags = tags.ToArray();
+            var context = new StringTagChangedContext(TagChangeType.Removed, oldTags, newTags);
+            OnTagRemoved?.Invoke(context);
+            OnTagChanged?.Invoke(context);
+        }
+    }
+
+    public void RemoveTags(params string[] tags)
+    {
+        foreach (var tag in tags)
+        {
+            RemoveTag(tag);
+        }
+    }
+
+    public void ClearTags()
+    {
+        if (tags.Count > 0)
+        {
+            var oldTags = tags.ToArray();
+            tags.Clear();
+            var context = new StringTagChangedContext(TagChangeType.Cleared, oldTags, new string[0]);
+            OnTagsCleared?.Invoke(context);
+            OnTagChanged?.Invoke(context);
+        }
+    }
+
+    public void SetTags(params string[] newTags)
+    {
+        var oldTags = tags.ToArray();
+        tags = new List<string>(newTags);
+        var context = new StringTagChangedContext(TagChangeType.Set, oldTags, newTags);
+        OnTagsSet?.Invoke(context);
+        OnTagChanged?.Invoke(context);
+    }
+
+    public void ToggleTag(string tag)
+    {
+        if (tags.Contains(tag))
+        {
+            RemoveTag(tag);
+        }
+        else
+        {
+            AddTag(tag);
+        }
+    }
+
+    public void ToggleTags(params string[] tags)
+    {
+        foreach (var tag in tags)
+        {
+            ToggleTag(tag);
+        }
+    }
+
+    public void SetTag(string tag, bool value)
+    {
+        if (value)
+        {
+            AddTag(tag);
+        }
+        else
+        {
+            RemoveTag(tag);
         }
     }
 }

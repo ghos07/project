@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using TMPro;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class Destructible : MonoBehaviour
     public GameObject[] createOnDestroy;
 
     public bool spawnFragmentsWithWorldScale = false;
+    public bool noParent = false;
     public float fragmentScaleMultiplier = 1.0f;
 
     public bool destroySelf = false;
@@ -57,6 +59,51 @@ public class Destructible : MonoBehaviour
 
     private bool destroyNextFrame = false;
     private DamageContext destroyNextFrameContext;
+
+    private List<System.Action<GameObject>> fragmentProcedures = new();
+
+    private static TaskManager globalDestructibleTaskManager;
+    public static TaskManager GlobalDestructibleTaskManager
+    {
+        get
+        {
+            // Check if there is a stored global task manager instance already created and active in the scene
+            if (globalDestructibleTaskManager == null || !globalDestructibleTaskManager.isGlobal || !globalDestructibleTaskManager.gameObject.activeInHierarchy)
+            {
+                // If there is no stored global task manager instance, check if there is a global task manager in the scene
+                TaskManager[] taskManagers = FindObjectsOfType<TaskManager>();
+                foreach (TaskManager taskManager in taskManagers)
+                {
+                    if (taskManager.isGlobal)
+                    {
+                        globalDestructibleTaskManager = taskManager;
+                        return globalDestructibleTaskManager;
+                    }
+                }
+
+                // If there is no global task manager in the scene, create one
+                GameObject taskManagerObject = new GameObject("Task Manager");
+                globalDestructibleTaskManager = taskManagerObject.AddComponent<TaskManager>();
+                globalDestructibleTaskManager.isGlobal = true;
+                GlobalDestructibleTaskManager.GetComponent<TaskManager>().runAsynchronously = false;
+            }
+
+            return globalDestructibleTaskManager;
+        }
+    }
+
+    public void AddFragmentProcedure(System.Action<GameObject> procedure)
+    {
+        fragmentProcedures.Add(procedure);
+    }
+
+    private void ApplyProcedures(GameObject fragment)
+    {
+        foreach (System.Action<GameObject> procedure in fragmentProcedures)
+        {
+            procedure(fragment);
+        }
+    }
 
     public Vector3 FragmentExplosionSourceVector3
     {
@@ -165,14 +212,17 @@ public class Destructible : MonoBehaviour
         foreach (GameObject obj in createOnDestroy)
         {
             GameObject objCopy;
+
+            Transform parent = noParent ? null : transform;
+
             if (spawnFragmentsWithWorldScale)
             {
                 objCopy = Instantiate(obj, transform.position, obj.transform.rotation * transform.rotation);
-                objCopy.transform.parent = transform;
+                objCopy.transform.parent = parent;
             }
             else
             {
-                objCopy = Instantiate(obj, obj.transform.position, obj.transform.rotation, transform);
+                objCopy = Instantiate(obj, obj.transform.position, obj.transform.rotation, parent);
             }
             objCopy.transform.SetParent(null);
             objCopy.transform.localScale = objCopy.transform.localScale * fragmentScaleMultiplier;
@@ -215,7 +265,6 @@ public class Destructible : MonoBehaviour
             {
                 if (objCopy.TryGetComponent(out Rigidbody rb))
                 {
-                    print(objCopy.name + " is being pushed");
                     rb.AddForce(realPushForce * (transform.position - context.SourceLocation), ForceMode.Force);
                 }
 
@@ -285,12 +334,22 @@ public class Destructible : MonoBehaviour
             bool shouldDestroy = false;
             shouldDestroy = collision.impulse.magnitude > forceThreshold;
 
+            // Check if the other object is also destructible and if it has a higher force threshold.
+            Destructible otherDestructible = collision.gameObject.GetComponent<Destructible>();
+            if (otherDestructible != null)
+            {
+                shouldDestroy = shouldDestroy && otherDestructible.forceThreshold > forceThreshold;
+            }
+
+
+
             if (shouldDestroy)
             {
                 destroyedThisFrame = true;
 
                 Rigidbody collidingRigidbody = collision.rigidbody;
                 Vector3 collidingObjectVelocity = collidingRigidbody != null ? collidingRigidbody.velocity : Vector3.zero;
+
                 Vector3 collidingObjectAngularVelocity = collidingRigidbody != null ? collidingRigidbody.angularVelocity : Vector3.zero;
 
 
@@ -312,6 +371,12 @@ public class Destructible : MonoBehaviour
                     averagePoint += contact.point;
                 }
 
+                Vector3 impulse = collision.impulse;
+
+                // Both participants of a collision see the same impulse, so we need to flip it for one of them.
+                if (Vector3.Dot(collision.GetContact(0).normal, impulse) < 0f)
+                    impulse *= -1f;
+
                 // Calculate the average point by dividing the sum by the number of points
                 if (pointCount > 0)
                 {
@@ -322,14 +387,21 @@ public class Destructible : MonoBehaviour
                 OnDestroyedInternal(new(averagePoint));
 
                 useVector3FragmentExplosionSource = false;
-                return;
-                if (collidingRigidbody != null)
+
+                GlobalDestructibleTaskManager.DoNextFrame(() =>
                 {
-                    collidingRigidbody.velocity = Vector3.zero;
-                    collidingRigidbody.angularVelocity = Vector3.zero;
-                    collidingRigidbody.AddForce(collidingObjectVelocity, ForceMode.VelocityChange);
-                    collidingRigidbody.AddTorque(collidingObjectAngularVelocity, ForceMode.VelocityChange);
-                }
+                    if (collidingRigidbody != null)
+                    {
+                        collidingObjectVelocity = collidingRigidbody.velocity - impulse / collidingRigidbody.mass;
+
+                        collidingRigidbody.velocity = collidingObjectVelocity;
+                        collidingRigidbody.angularVelocity = collidingObjectAngularVelocity;
+
+                        collidingRigidbody.AddForceAtPosition(-collision.impulse.normalized * forceThreshold, averagePoint, ForceMode.Impulse);
+
+                    }
+                }, true);
+
             }
         }
     }

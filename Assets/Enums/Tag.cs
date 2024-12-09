@@ -18,4 +18,5 @@ public enum Tag
     ItemIsArrow,
     ItemConsumable,
     NearZeroMass,
+    TilemanagerTile,
 }
