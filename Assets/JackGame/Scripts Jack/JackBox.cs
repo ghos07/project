@@ -23,8 +23,10 @@ public class JackBox : MonoBehaviour
     public float jumpScareWindTime => jumpScareBaseWindTime * (1.0f - risk/2);
     public float jumpScareTimer = -1.0f;
 
-    public float angerDecrement = -1.0f;
+    public int maxAnger = 10;
+    public int angerDecrement = -1;
     public float angerDecrementInterval = 5.0f;
+    public float angerDecrementCooldown = 5.0f;
 
     public int anger = 0;
 
@@ -37,7 +39,7 @@ public class JackBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) || (anger > maxAnger))
         {
             crankProgress += crankSpeed * Time.deltaTime;
 
@@ -115,12 +117,38 @@ public class JackBox : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
+            anger += 1;
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
+            anger += 1;
+        }
 
+        angerDecrementCooldown -= Time.deltaTime;
+
+        if (angerDecrementCooldown <= 0)
+        {
+            angerDecrementCooldown = angerDecrementInterval;
+            anger += angerDecrement;
+
+            if (anger < 0)
+            {
+                anger = 0;
+            }
+        }
+
+        if (anger > maxAnger)
+        {
+            risk += riskIncrease * Time.deltaTime * anger / maxAnger;
+
+            if (Random.value < 0.1f * Time.deltaTime)
+            {
+                if (anger < 13)
+                {
+                    anger = 13;
+                }
+            }
         }
     }
 }

@@ -2492,8 +2492,10 @@ MonoBehaviour:
   jumpscareCheckInterval: 1
   jumpScareBaseWindTime: 0.5
   jumpScareTimer: -1
-  angerDecrement: 5
-  angerDecrementInterval: -1
+  maxAnger: 10
+  angerDecrement: -1
+  angerDecrementInterval: 1
+  angerDecrementCooldown: 1
   anger: 0
 --- !u!1 &8997866936914084794
 GameObject:
