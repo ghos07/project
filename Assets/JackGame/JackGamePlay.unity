@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 583948305}
   - component: {fileID: 583948306}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: LidL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,7 +207,7 @@ Transform:
   m_GameObject: {fileID: 853733976}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3708, y: 0, z: 0.0036}
+  m_LocalPosition: {x: -0.377, y: -0.004, z: 0.004}
   m_LocalScale: {x: 0.9149844, y: 0.012859748, z: 1.8372493}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -295,7 +295,6 @@ GameObject:
   - component: {fileID: 880144357}
   - component: {fileID: 880144360}
   - component: {fileID: 880144359}
-  - component: {fileID: 880144358}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -318,22 +317,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6838782325469119348}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &880144358
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 880144356}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 2e5f7da60a792cd40b61722828af9a4b, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 2e5f7da60a792cd40b61722828af9a4b, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &880144359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,7 +413,7 @@ GameObject:
   - component: {fileID: 1077252325}
   - component: {fileID: 1077252326}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: LidR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -940,12 +923,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630917986}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.4067, y: 0.927, z: -0.095}
   m_LocalScale: {x: 1.1022916, y: 0.29289, z: 0.29289}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 8131252146944366133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1693286449
 GameObject:
@@ -2208,6 +2191,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1630917990}
   - {fileID: 4947666179263909200}
   - {fileID: 2105806573}
   - {fileID: 1077252325}
@@ -2231,6 +2215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8131252146944366133}
+  - component: {fileID: 8904691869694299280}
   m_Layer: 0
   m_Name: JackintheBox
   m_TagString: Untagged
@@ -2238,6 +2223,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8904691869694299280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8904691869694299279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8550da710e7b29439aeb6d8fd06dfda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crank: {fileID: 1630917986}
+  jack: {fileID: 2105806572}
+  lid1: {fileID: 1077252324}
+  lid2: {fileID: 583948304}
+  player: {fileID: 1620049784}
+  crankSpeed: 0.01
+  crankProgress: 0
+  baseRisk: 0.001
+  riskIncrease: 0.01
+  risk: 0
+  jumpscareCheckCooldown: 1
+  jumpscareCheckInterval: 1
+  jumpScareBaseWindTime: 0.5
+  jumpScareTimer: -1
 --- !u!1 &8997866936914084794
 GameObject:
   m_ObjectHideFlags: 0
@@ -2308,4 +2319,3 @@ SceneRoots:
   - {fileID: 8131252146944366133}
   - {fileID: 2137645377}
   - {fileID: 1693286452}
-  - {fileID: 1630917990}
