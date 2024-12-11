@@ -44,7 +44,7 @@ public class JackBox : MonoBehaviour
             crankProgress += crankSpeed * Time.deltaTime;
 
             // Add rotation
-            crank.transform.localRotation = Quaternion.Euler(crankProgress / crankSpeed * 360.0f, 0, 0);
+            //crank.transform.localRotation = Quaternion.Euler(crankProgress / crankSpeed * 360.0f, 0, 0);
 
             bool jumpscare = false;
 
