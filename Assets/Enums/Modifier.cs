@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+///<summary>
+///</summary>
 public enum Modifier
 {
     DragModifier,
@@ -10,4 +8,5 @@ public enum Modifier
     DamageTakenModifier,
     HealthModifier,
     JumpForceModifier,
+    CameraShake,
 }

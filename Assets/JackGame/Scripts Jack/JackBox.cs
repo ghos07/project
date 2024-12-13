@@ -1,9 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class JackBox : MonoBehaviour
 {
+    // post processing
+    public Volume volume;
+    public float postProcessingIntensity = 0.0f;
+
+    private VolumeProfile baseProfile;
+    public VolumeProfile maxRiskProfile;
+
     public GameObject crank;
     public GameObject jack;
     public GameObject lid1;
@@ -30,15 +40,58 @@ public class JackBox : MonoBehaviour
 
     public int anger = 0;
 
+    private float blendFactor = 0.0f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Create a new VolumeProfile
+        baseProfile = ScriptableObject.CreateInstance<VolumeProfile>();
+
+        // Copy each effect from volume.profile to baseProfile
+        foreach (var component in volume.profile.components)
+        {
+            var copy = Instantiate(component);
+            baseProfile.components.Add(copy);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        blendFactor = Mathf.Lerp(blendFactor, Mathf.Clamp01((risk + (anger/10f)) * postProcessingIntensity), Time.deltaTime * 2);
+        baseProfile.TryGet<Bloom>(out var baseBloom);
+        maxRiskProfile.TryGet<Bloom>(out var maxRiskBloom);
+        volume.profile.TryGet<Bloom>(out var currentBloom);
+        currentBloom.intensity.value = Mathf.Lerp(baseBloom.intensity.value, maxRiskBloom.intensity.value, blendFactor);
+
+        baseProfile.TryGet<Vignette>(out var baseVignette);
+        maxRiskProfile.TryGet<Vignette>(out var maxRiskVignette);
+        volume.profile.TryGet<Vignette>(out var currentVignette);
+        currentVignette.intensity.value = Mathf.Lerp(baseVignette.intensity.value, maxRiskVignette.intensity.value, blendFactor);
+        currentVignette.color.value = Color.Lerp(baseVignette.color.value, maxRiskVignette.color.value, blendFactor);
+        currentVignette.smoothness.value = Mathf.Lerp(baseVignette.smoothness.value, maxRiskVignette.smoothness.value, blendFactor);
+
+        baseProfile.TryGet<ChromaticAberration>(out var baseChromaticAberration);
+        maxRiskProfile.TryGet<ChromaticAberration>(out var maxRiskChromaticAberration);
+        volume.profile.TryGet<ChromaticAberration>(out var currentChromaticAberration);
+        currentChromaticAberration.intensity.value = Mathf.Lerp(baseChromaticAberration.intensity.value, maxRiskChromaticAberration.intensity.value, blendFactor);
+
+        baseProfile.TryGet<LensDistortion>(out var baseLensDistortion);
+        maxRiskProfile.TryGet<LensDistortion>(out var maxRiskLensDistortion);
+        volume.profile.TryGet<LensDistortion>(out var currentLensDistortion);
+        currentLensDistortion.intensity.value = Mathf.Lerp(baseLensDistortion.intensity.value, maxRiskLensDistortion.intensity.value, blendFactor);
+
+        baseProfile.TryGet<FilmGrain>(out var baseFilmGrain);
+        maxRiskProfile.TryGet<FilmGrain>(out var maxRiskFilmGrain);
+        volume.profile.TryGet<FilmGrain>(out var currentFilmGrain);
+        currentFilmGrain.intensity.value = Mathf.Lerp(baseFilmGrain.intensity.value, maxRiskFilmGrain.intensity.value, blendFactor);
+
+        baseProfile.TryGet<MotionBlur>(out var baseMotionBlur);
+        maxRiskProfile.TryGet<MotionBlur>(out var maxRiskMotionBlur);
+        volume.profile.TryGet<MotionBlur>(out var currentMotionBlur);
+        currentMotionBlur.intensity.value = Mathf.Lerp(baseMotionBlur.intensity.value, maxRiskMotionBlur.intensity.value, blendFactor);
+
         if (Input.GetKey(KeyCode.Space) || (anger > maxAnger))
         {
             crankProgress += crankSpeed * Time.deltaTime;
@@ -117,12 +170,12 @@ public class JackBox : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            anger += 1;
+            //anger += 1;
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            anger += 1;
+            anger += 2;
         }
 
         angerDecrementCooldown -= Time.deltaTime;
