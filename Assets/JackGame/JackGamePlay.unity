@@ -2751,6 +2751,7 @@ GameObject:
   - component: {fileID: 1630917989}
   - component: {fileID: 1630917988}
   - component: {fileID: 1630917987}
+  - component: {fileID: 1630917991}
   m_Layer: 0
   m_Name: Crank
   m_TagString: Untagged
@@ -2845,6 +2846,20 @@ Transform:
   - {fileID: 1576039703}
   m_Father: {fileID: 8131252146944366133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1630917991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630917986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eccba6dea44e0a48a90cf71c612ed1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 30
+  acceleration: 15
 --- !u!1 &1693286449
 GameObject:
   m_ObjectHideFlags: 0
