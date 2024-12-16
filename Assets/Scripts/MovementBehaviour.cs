@@ -9,6 +9,7 @@ public class MovementBehaviour : MonoBehaviour
     private ModifierManager modifiers;
     [SerializeField] public Transform collision;
     public List<Tag> walkableTags = new List<Tag>();
+    [SerializeField] private bool moveInFacingDirection = true;
     [SerializeField] private float acceleration = 5f;
     [SerializeField] private float maxSpeed = 5f;
     [SerializeField] private float sprintMaxSpeedModifier = 1.5f;
@@ -158,6 +159,10 @@ public class MovementBehaviour : MonoBehaviour
         float effectiveMaxSpeed = maxSpeed * modifiers.GetValue(Modifier.MaxSpeedModifier);
 
         Vector3 move = new Vector3(direction.x, 0, direction.y);
+        if (moveInFacingDirection)
+        {
+            move = transform.TransformDirection(move);
+        }
         moveForce = effectiveAcceleration * Mathf.Clamp(1 - new Vector2(rb.velocity.x, rb.velocity.z).magnitude / effectiveMaxSpeed, 0, 1) * move;
     }
 
