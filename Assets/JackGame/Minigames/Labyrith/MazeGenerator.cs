@@ -19,10 +19,10 @@ public class MazeGenerator : MonoBehaviour
 
     // Start is called before the first frame update
     IEnumerator Start()
-    {
-        int r = Random.Range(1, 10);
+    {   
         _mazeGrid = new MazeCell[_mazeWidth, _mazeDepth];
-
+        
+        
         for (int x = 0; x < _mazeWidth; x++)
         {
             for (int z = 0; z < _mazeDepth; z++)
@@ -32,7 +32,14 @@ public class MazeGenerator : MonoBehaviour
         }
 
         yield return GenerateMaze(null, _mazeGrid[0, 0]);
+    }
+    public int ExitR()
+    {
+        int r = Random.Range(0, _mazeGrid.GetUpperBound(1));
         Destroy(_mazeGrid[r, 0].gameObject);
+        Destroy(_mazeGrid[0, r].gameObject);
+
+        return r;
     }
 
     private IEnumerator GenerateMaze(MazeCell previousCell, MazeCell currentCell)
