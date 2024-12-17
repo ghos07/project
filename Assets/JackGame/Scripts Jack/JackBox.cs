@@ -7,12 +7,10 @@ using UnityEngine.Rendering.Universal;
 
 public class JackBox : MonoBehaviour
 {
-    // post processing
-    public Volume volume;
-    public float postProcessingIntensity = 0.0f;
+    // How many of these am I gonna add DX
+    public static JackBox Instance { get; private set; }
 
-    private VolumeProfile baseProfile;
-    public VolumeProfile maxRiskProfile;
+
 
     public GameObject crank;
     public GameObject jack;
@@ -30,71 +28,87 @@ public class JackBox : MonoBehaviour
     public float jumpscareCheckInterval = 1.0f;
 
     public float jumpScareBaseWindTime = 0.5f;
-    public float jumpScareWindTime => jumpScareBaseWindTime * (1.0f - risk/2);
+    public float jumpScareWindTime => jumpScareBaseWindTime / (risk / 2 + 1);
     public float jumpScareTimer = -1.0f;
 
     public int maxAnger = 10;
+    public int realMaxAnger = 15;
     public int angerDecrement = -1;
     public float angerDecrementInterval = 5.0f;
     public float angerDecrementCooldown = 5.0f;
 
     public int anger = 0;
+    public float resentment = 0;
+    public float maxResentment = 3;
+    public float resentmentDivide = 2;
+    public float lastResentment = 0;
 
-    private float blendFactor = 0.0f;
+    public AudioClip resentmentSound;
+    public AudioClip maxResentmentSound;
+    public AudioClip angerThresholdSound;
+    public AudioClip angerIncreaseSound;
+
+
+
+    public bool isSpinning = false;
+    public bool lastIsSpinning = false;
+
+    public void OnReset()
+    {
+        crankProgress = 0.0f;
+        risk = 0.0f;
+        jumpscareCheckCooldown = jumpscareCheckInterval;
+        jumpScareTimer = -1.0f;
+        anger = 0;
+        resentment /= resentmentDivide;
+
+        CamPPBlend.Instance.Unlock(this);
+
+        MinigameManager.ResetMinigames(new() { MinigameManager.GetMinigame(MinigameNames.JackBox) });
+
+        MinigameManager.GetMinigame(MinigameNames.JackBox).SetActive(false);
+    }
+
+    public void OnActivate()
+    {
+        crankProgress = 0.0f;
+        risk = 0.0f;
+        jumpscareCheckCooldown = jumpscareCheckInterval;
+        jumpScareTimer = -1.0f;
+        anger = 0;
+
+        CamPPBlend.Instance.Lock(this);
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        // Create a new VolumeProfile
-        baseProfile = ScriptableObject.CreateInstance<VolumeProfile>();
-
-        // Copy each effect from volume.profile to baseProfile
-        foreach (var component in volume.profile.components)
-        {
-            var copy = Instantiate(component);
-            baseProfile.components.Add(copy);
-        }
+        
     }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+    
 
     // Update is called once per frame
     void Update()
     {
-        blendFactor = Mathf.Lerp(blendFactor, Mathf.Clamp01((risk + (anger/10f)) * postProcessingIntensity), Time.deltaTime * 2);
-        baseProfile.TryGet<Bloom>(out var baseBloom);
-        maxRiskProfile.TryGet<Bloom>(out var maxRiskBloom);
-        volume.profile.TryGet<Bloom>(out var currentBloom);
-        currentBloom.intensity.value = Mathf.Lerp(baseBloom.intensity.value, maxRiskBloom.intensity.value, blendFactor);
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OnReset();
+        }
 
-        baseProfile.TryGet<Vignette>(out var baseVignette);
-        maxRiskProfile.TryGet<Vignette>(out var maxRiskVignette);
-        volume.profile.TryGet<Vignette>(out var currentVignette);
-        currentVignette.intensity.value = Mathf.Lerp(baseVignette.intensity.value, maxRiskVignette.intensity.value, blendFactor);
-        currentVignette.color.value = Color.Lerp(baseVignette.color.value, maxRiskVignette.color.value, blendFactor);
-        currentVignette.smoothness.value = Mathf.Lerp(baseVignette.smoothness.value, maxRiskVignette.smoothness.value, blendFactor);
+        // uhhh it works :/
+        if (CamPPBlend.Instance.IsMine(this))
+            CamPPBlend.Instance.targetBlendFactor = Mathf.Clamp01(risk + (anger / 10f));
 
-        baseProfile.TryGet<ChromaticAberration>(out var baseChromaticAberration);
-        maxRiskProfile.TryGet<ChromaticAberration>(out var maxRiskChromaticAberration);
-        volume.profile.TryGet<ChromaticAberration>(out var currentChromaticAberration);
-        currentChromaticAberration.intensity.value = Mathf.Lerp(baseChromaticAberration.intensity.value, maxRiskChromaticAberration.intensity.value, blendFactor);
-
-        baseProfile.TryGet<LensDistortion>(out var baseLensDistortion);
-        maxRiskProfile.TryGet<LensDistortion>(out var maxRiskLensDistortion);
-        volume.profile.TryGet<LensDistortion>(out var currentLensDistortion);
-        currentLensDistortion.intensity.value = Mathf.Lerp(baseLensDistortion.intensity.value, maxRiskLensDistortion.intensity.value, blendFactor);
-
-        baseProfile.TryGet<FilmGrain>(out var baseFilmGrain);
-        maxRiskProfile.TryGet<FilmGrain>(out var maxRiskFilmGrain);
-        volume.profile.TryGet<FilmGrain>(out var currentFilmGrain);
-        currentFilmGrain.intensity.value = Mathf.Lerp(baseFilmGrain.intensity.value, maxRiskFilmGrain.intensity.value, blendFactor);
-
-        baseProfile.TryGet<MotionBlur>(out var baseMotionBlur);
-        maxRiskProfile.TryGet<MotionBlur>(out var maxRiskMotionBlur);
-        volume.profile.TryGet<MotionBlur>(out var currentMotionBlur);
-        currentMotionBlur.intensity.value = Mathf.Lerp(baseMotionBlur.intensity.value, maxRiskMotionBlur.intensity.value, blendFactor);
-
+        isSpinning = false;
         if (Input.GetKey(KeyCode.Space) || (anger > maxAnger))
         {
             crankProgress += crankSpeed * Time.deltaTime;
+            isSpinning = true;
 
             // Add rotation
             // crank.transform.localRotation *= Quaternion.Euler(crankSpeed * 360.0f * Time.deltaTime, 0, 0);
@@ -157,7 +171,7 @@ public class JackBox : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (lastIsSpinning && !isSpinning)
         {
             //crankProgress = 0.0f;
             //risk = 0.0f;
@@ -176,6 +190,8 @@ public class JackBox : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             anger += 2;
+            // TODO: Play sound effect on resentment full 1 increase
+            resentment += 0.08f;
         }
 
         angerDecrementCooldown -= Time.deltaTime;
@@ -193,9 +209,9 @@ public class JackBox : MonoBehaviour
 
         if (anger > maxAnger)
         {
-            risk += riskIncrease * Time.deltaTime * anger / maxAnger;
+            risk += riskIncrease * Time.deltaTime * anger / maxAnger * 10;
 
-            if (Random.value < 0.1f * Time.deltaTime)
+            if (Random.value < 0.02f * Time.deltaTime)
             {
                 if (anger < 13)
                 {
@@ -203,5 +219,27 @@ public class JackBox : MonoBehaviour
                 }
             }
         }
+
+        if (anger > realMaxAnger)
+        {
+            anger = realMaxAnger;
+        }
+
+        if (resentment > maxResentment)
+        {
+            if (Random.value < 0.3f * Time.deltaTime)
+            {
+                anger += 5;
+            }
+        }
+
+        lastIsSpinning = isSpinning;
+
+        if (lastResentment < 1 && resentment >= 1)
+        {
+
+        }
+
+        lastResentment = resentment;
     }
 }

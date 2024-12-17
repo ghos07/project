@@ -14,9 +14,9 @@ TagManager:
   - A No Collide With B
   - B No Collide With A
   - No Self Collide
-  - 
-  - 
-  - 
+  - Player
+  - InteractableHitbox
+  - PuzzleInteractive
   - 
   - 
   - 
