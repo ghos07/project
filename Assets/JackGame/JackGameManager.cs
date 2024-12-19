@@ -11,10 +11,15 @@ public class JackGameManager : MonoBehaviour
     public static int level = 1;
     public static float difficulty = 1.0f;
 
+    // Editor button
+    [InspectorButton("ProgressLevel")]
+    public bool progressLevel;
+
     public static void ProgressLevel()
     {
         level++;
         difficulty += 1.0f;
+        print(level);
     }
 
     // Start is called before the first frame update

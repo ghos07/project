@@ -11,6 +11,9 @@ public class HandleRotate : MonoBehaviour
 
     public AudioSource spinningSound;
 
+    public float soundSpeed = 1;
+    public float spinningSoundInterval = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +28,7 @@ public class HandleRotate : MonoBehaviour
             transform.localRotation *= Quaternion.Euler(new(Time.deltaTime * velocity, 0, 0));
             velocity += Time.deltaTime * acceleration;
         }
-        if (JackBox.Instance == false)
+        if (JackBox.Instance.isSpinning == false)
         {
             velocity = velocityOriginal;
         }
@@ -34,16 +37,12 @@ public class HandleRotate : MonoBehaviour
         {
             if (JackBox.Instance.isSpinning)
             {
-                if (!spinningSound.isPlaying)
+                if (spinningSoundInterval <= 0)
                 {
-                    spinningSound.loop = true;
-                    // Speed up the sound to match the speed of the handle
-                    spinningSound.pitch = velocity / velocityOriginal;
+                    spinningSoundInterval = 1 / (velocity * soundSpeed);
+                    spinningSound.Play();
                 }
-            }
-            else
-            {
-                spinningSound.loop = false;
+                spinningSoundInterval -= Time.deltaTime;
             }
         }
     }

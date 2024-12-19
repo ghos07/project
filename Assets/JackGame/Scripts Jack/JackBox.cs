@@ -18,17 +18,20 @@ public class JackBox : MonoBehaviour
     public GameObject lid2;
     public GameObject player;
 
+    public float progressToReduceMinigames = 100f;
+
     public float crankSpeed = 1.0f;
     public float crankProgress = 0.0f;
     public float baseRisk = 0.01f;
     public float riskIncrease = 0.005f;
     public float risk = 0.0f;
+    private int lastProgress = 0;
 
     public float jumpscareCheckCooldown = 1.0f;
     public float jumpscareCheckInterval = 1.0f;
 
     public float jumpScareBaseWindTime = 0.5f;
-    public float jumpScareWindTime => jumpScareBaseWindTime / (risk / 2 + 1);
+    public float jumpScareWindTime => jumpScareBaseWindTime / (risk * 5) / (JackGameManager.difficulty) + 0.2f;
     public float jumpScareTimer = -1.0f;
 
     public int maxAnger = 10;
@@ -47,22 +50,38 @@ public class JackBox : MonoBehaviour
     public AudioClip maxResentmentSound;
     public AudioClip angerThresholdSound;
     public AudioClip angerIncreaseSound;
+    public AudioClip attemptJumpscareSound;
+    public AudioClip exitSoundSuccess;
+    public AudioClip exitSoundFail;
+
+    public void OnLeave()
+    {
+        AudioSource.PlayClipAtPoint(exitSoundSuccess, transform.position);
+    }
 
 
 
     public bool isSpinning = false;
     public bool lastIsSpinning = false;
+    public bool failed = false;
 
     public void OnReset()
     {
+        if (failed)
+        {
+            JackGameManager.lives--;
+            MinigameManager.minigamesRequired = MinigameManager.baseMinigamesRequired + JackGameManager.level;
+        }
+
         crankProgress = 0.0f;
         risk = 0.0f;
         jumpscareCheckCooldown = jumpscareCheckInterval;
         jumpScareTimer = -1.0f;
         anger = 0;
         resentment /= resentmentDivide;
+        failed = false;
 
-        CamPPBlend.Instance.Unlock(this);
+        CamPPBlend.Instance.Unlock(this, true);
 
         MinigameManager.ResetMinigames(new() { MinigameManager.GetMinigame(MinigameNames.JackBox) });
 
@@ -80,6 +99,11 @@ public class JackBox : MonoBehaviour
         CamPPBlend.Instance.Lock(this);
     }
 
+    public void OnDestroy()
+    {
+        CamPPBlend.Instance.Unlock(this, true);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -95,9 +119,12 @@ public class JackBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(jumpScareWindTime);
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             OnReset();
+            return;
         }
 
         // uhhh it works :/
@@ -128,7 +155,7 @@ public class JackBox : MonoBehaviour
             {
                 jumpscareCheckCooldown = jumpscareCheckInterval;
 
-                if (Random.value < risk)
+                if (Random.value < (0.05f + risk * 0.3f))
                 {
                     jumpscare = true;
                 }
@@ -139,6 +166,7 @@ public class JackBox : MonoBehaviour
                 if (jumpScareTimer < 0)
                 {
                     jumpScareTimer = jumpScareWindTime;
+                    AudioSource.PlayClipAtPoint(attemptJumpscareSound, transform.position);
                 }
             }
 
@@ -162,6 +190,12 @@ public class JackBox : MonoBehaviour
                     player.GetComponent<Animator>().SetTrigger("PlayJackBoxScare");
 
                     jumpScareTimer = -1;
+
+                    failed = true;
+
+                    OnReset();
+
+                    return;
                 }
             }
             else
@@ -190,7 +224,7 @@ public class JackBox : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             anger += 2;
-            // TODO: Play sound effect on resentment full 1 increase
+            
             resentment += 0.08f;
         }
 
@@ -237,7 +271,16 @@ public class JackBox : MonoBehaviour
 
         if (lastResentment < 1 && resentment >= 1)
         {
+            AudioSource.PlayClipAtPoint(resentmentSound, transform.position);
+        }
 
+        bool reduceMinigame = lastProgress  != (int)(crankProgress / progressToReduceMinigames);
+        if (reduceMinigame)
+        {
+
+            lastProgress = (int)(crankProgress / progressToReduceMinigames);
+
+            MinigameManager.minigamesRequired--;
         }
 
         lastResentment = resentment;

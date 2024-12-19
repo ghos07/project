@@ -12,10 +12,12 @@ public class CamPPBlend : MonoBehaviour
     public Volume volume;
     public float postProcessingIntensity;
     public VolumeProfile baseProfile;
-    public VolumeProfile maxRiskProfile;
+    public VolumeProfile altProfile;
+
+    public float speed = 0.3f;
 
     
-    private float blendFactor = 0.0f;
+    public float blendFactor = 0.0f;
     public float targetBlendFactor = 0.0f;
 
     public bool locked = false;
@@ -49,6 +51,12 @@ public class CamPPBlend : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+    private void Awake()
+    {
+        Instance = this;
         // Create a new VolumeProfile
         baseProfile = ScriptableObject.CreateInstance<VolumeProfile>();
 
@@ -60,43 +68,38 @@ public class CamPPBlend : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        Instance = this;
-    }
-
     public void BlendPP()
     {
-        blendFactor = Mathf.Lerp(blendFactor, targetBlendFactor, Time.deltaTime);
+        blendFactor = Mathf.Lerp(blendFactor, targetBlendFactor, Time.deltaTime * speed);
         baseProfile.TryGet<Bloom>(out var baseBloom);
-        maxRiskProfile.TryGet<Bloom>(out var maxRiskBloom);
+        altProfile.TryGet<Bloom>(out var maxRiskBloom);
         volume.profile.TryGet<Bloom>(out var currentBloom);
         currentBloom.intensity.value = Mathf.Lerp(baseBloom.intensity.value, maxRiskBloom.intensity.value, blendFactor);
 
         baseProfile.TryGet<Vignette>(out var baseVignette);
-        maxRiskProfile.TryGet<Vignette>(out var maxRiskVignette);
+        altProfile.TryGet<Vignette>(out var maxRiskVignette);
         volume.profile.TryGet<Vignette>(out var currentVignette);
         currentVignette.intensity.value = Mathf.Lerp(baseVignette.intensity.value, maxRiskVignette.intensity.value, blendFactor);
         currentVignette.color.value = Color.Lerp(baseVignette.color.value, maxRiskVignette.color.value, blendFactor);
         currentVignette.smoothness.value = Mathf.Lerp(baseVignette.smoothness.value, maxRiskVignette.smoothness.value, blendFactor);
 
         baseProfile.TryGet<ChromaticAberration>(out var baseChromaticAberration);
-        maxRiskProfile.TryGet<ChromaticAberration>(out var maxRiskChromaticAberration);
+        altProfile.TryGet<ChromaticAberration>(out var maxRiskChromaticAberration);
         volume.profile.TryGet<ChromaticAberration>(out var currentChromaticAberration);
         currentChromaticAberration.intensity.value = Mathf.Lerp(baseChromaticAberration.intensity.value, maxRiskChromaticAberration.intensity.value, blendFactor);
 
         baseProfile.TryGet<LensDistortion>(out var baseLensDistortion);
-        maxRiskProfile.TryGet<LensDistortion>(out var maxRiskLensDistortion);
+        altProfile.TryGet<LensDistortion>(out var maxRiskLensDistortion);
         volume.profile.TryGet<LensDistortion>(out var currentLensDistortion);
         currentLensDistortion.intensity.value = Mathf.Lerp(baseLensDistortion.intensity.value, maxRiskLensDistortion.intensity.value, blendFactor);
 
         baseProfile.TryGet<FilmGrain>(out var baseFilmGrain);
-        maxRiskProfile.TryGet<FilmGrain>(out var maxRiskFilmGrain);
+        altProfile.TryGet<FilmGrain>(out var maxRiskFilmGrain);
         volume.profile.TryGet<FilmGrain>(out var currentFilmGrain);
         currentFilmGrain.intensity.value = Mathf.Lerp(baseFilmGrain.intensity.value, maxRiskFilmGrain.intensity.value, blendFactor);
 
         baseProfile.TryGet<MotionBlur>(out var baseMotionBlur);
-        maxRiskProfile.TryGet<MotionBlur>(out var maxRiskMotionBlur);
+        altProfile.TryGet<MotionBlur>(out var maxRiskMotionBlur);
         volume.profile.TryGet<MotionBlur>(out var currentMotionBlur);
         currentMotionBlur.intensity.value = Mathf.Lerp(baseMotionBlur.intensity.value, maxRiskMotionBlur.intensity.value, blendFactor);
     }

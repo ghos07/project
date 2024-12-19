@@ -9,7 +9,9 @@ public class MinigameManager : MonoBehaviour
     public static int minigamesCompleted = 0;
     public static int minigamesFailed = 0;
     public static int minigamesTotal = 0;
+    public static int baseMinigamesRequired = 3;
     public static int minigamesRequired = 3;
+    public static int minigamesDone => minigamesCompleted + minigamesFailed;
 
     public bool completed = false;
     public bool active = false;
