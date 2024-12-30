@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MazeGenerator : MonoBehaviour
 {
+    [SerializeField]
+    private Vector3 playerSpawnOffset;
+    [SerializeField]
+    private GameObject player;
 
     [SerializeField]
     private MazeCell _mazeCellPreFab;
@@ -19,7 +24,7 @@ public class MazeGenerator : MonoBehaviour
 
     // Start is called before the first frame update
     IEnumerator Start()
-    {   
+    {
         _mazeGrid = new MazeCell[_mazeWidth, _mazeDepth];
         
         
@@ -32,14 +37,24 @@ public class MazeGenerator : MonoBehaviour
         }
 
         yield return GenerateMaze(null, _mazeGrid[0, 0]);
+        ExitR();
     }
     public int ExitR()
-    {
-        int r = Random.Range(0, _mazeGrid.GetUpperBound(1));
-        Destroy(_mazeGrid[r, 0].gameObject);
-        Destroy(_mazeGrid[0, r].gameObject);
-
-        return r;
+    {   
+        int exit = Random.Range(0, 2);
+        if (exit == 1)
+        {
+            int rE = Random.Range(0, _mazeDepth);
+            Destroy(_mazeGrid[0, rE].gameObject);
+            return rE;
+        }
+        else
+        {
+            int rE = Random.Range(0, _mazeWidth);
+            Destroy(_mazeGrid[rE, 0].gameObject);
+            return rE;
+        }
+        
     }
 
     private IEnumerator GenerateMaze(MazeCell previousCell, MazeCell currentCell)
@@ -47,7 +62,7 @@ public class MazeGenerator : MonoBehaviour
         currentCell.Visit();
         ClearWalls(previousCell, currentCell);
 
-        yield return new WaitForSeconds(0.001f);
+        yield return new WaitForSeconds(0.0001f);
 
         MazeCell nextCell;
 
@@ -153,6 +168,16 @@ public class MazeGenerator : MonoBehaviour
             currentCell.ClearFrontWall();
             return;
         }
+    }
+    [ContextMenu("SpawnPlayer")]
+    public void SpawnPlayer()
+    {
+        int x = Random.Range(0,_mazeWidth);
+        int y = Random.Range(0, _mazeDepth);
+        GameObject spawnTile = _mazeGrid[x,y].gameObject;
+        Instantiate(player, spawnTile.transform.position+playerSpawnOffset, spawnTile.transform.rotation);
+
+
     }
 
     // Update is called once per frame
