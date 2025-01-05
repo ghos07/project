@@ -14,6 +14,8 @@ public class KeyboardKey : MonoBehaviour
     public float pressTime = 0.7f;
     public float volume = 1f;
 
+    public float activeOnDifficulty = 0f;
+
     public bool isPressed = false;
     public float pressedTime = 0f;
 

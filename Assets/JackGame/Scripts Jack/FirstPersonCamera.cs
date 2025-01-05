@@ -11,6 +11,8 @@ public class FirstPersonCamera : MonoBehaviour
 
     public bool enableInteraction = true;
 
+    [SerializeField] private float camRoll = 0f;
+
     public void SetActive(bool active)
     {
         this.enabled = active;
@@ -33,8 +35,8 @@ public class FirstPersonCamera : MonoBehaviour
 
         // Prevent the player from looking up or down more than 90 degrees
         float xRotation = transform.localRotation.eulerAngles.x - mouseY;
-        xRotation = Mathf.Clamp(xRotation, 0, 90);
-        transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+        xRotation = Mathf.Clamp(xRotation, -90, 90);
+        transform.localRotation = Quaternion.Euler(xRotation, 0, camRoll);
 
         if (enableInteraction)
         {

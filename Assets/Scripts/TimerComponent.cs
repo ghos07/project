@@ -1,7 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks.Sources;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,6 +12,7 @@ public class TimerComponent : MonoBehaviour
     public bool destroyGameObjectOnComplete = false;
 
     public UnityEvent OnComplete;
+    public Action OnCompleteAction;
 
     private bool isComplete = false;
     public float timeLeft = 1.0f;
@@ -39,6 +40,7 @@ public class TimerComponent : MonoBehaviour
         isComplete = true;
 
         OnComplete?.Invoke();
+        OnCompleteAction?.Invoke();
 
         if (repeat)
         {

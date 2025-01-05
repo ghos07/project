@@ -14,8 +14,7 @@ public class JackBox : MonoBehaviour
 
     public GameObject crank;
     public GameObject jack;
-    public GameObject lid1;
-    public GameObject lid2;
+    public GameObject lid;
     public GameObject player;
 
     public float progressToReduceMinigames = 100f;
@@ -172,8 +171,7 @@ public class JackBox : MonoBehaviour
 
             if (jumpScareTimer >= 0)
             {
-                lid1.GetComponent<Animator>().SetBool("Bump", true);
-                lid2.GetComponent<Animator>().SetBool("Bump", true);
+                lid.GetComponent<Animator>().SetBool("Bump", true);
 
                 risk += riskIncrease * Time.deltaTime;
                 risk += riskIncrease * Time.deltaTime;
@@ -182,11 +180,9 @@ public class JackBox : MonoBehaviour
 
                 if (jumpScareTimer < 0)
                 {
-                    lid1.GetComponent<Animator>().SetBool("Bump", false);
-                    lid2.GetComponent<Animator>().SetBool("Bump", false);
+                    lid.GetComponent<Animator>().SetBool("Bump", false);
                     jack.GetComponent<Animator>().SetTrigger("Play");
-                    lid1.GetComponent<Animator>().SetTrigger("Play");
-                    lid2.GetComponent<Animator>().SetTrigger("Play");
+                    lid.GetComponent<Animator>().SetTrigger("Play");
                     player.GetComponent<Animator>().SetTrigger("PlayJackBoxScare");
 
                     jumpScareTimer = -1;
@@ -200,8 +196,7 @@ public class JackBox : MonoBehaviour
             }
             else
             {
-                lid1.GetComponent<Animator>().SetBool("Bump", false);
-                lid2.GetComponent<Animator>().SetBool("Bump", false);
+                lid.GetComponent<Animator>().SetBool("Bump", false);
             }
         }
 
@@ -212,8 +207,7 @@ public class JackBox : MonoBehaviour
             //jumpscareCheckCooldown = jumpscareCheckInterval;
             jumpScareTimer = -1.0f;
 
-            lid1.GetComponent<Animator>().SetBool("Bump", false);
-            lid2.GetComponent<Animator>().SetBool("Bump", false);
+            lid.GetComponent<Animator>().SetBool("Bump", false);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))

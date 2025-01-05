@@ -35,6 +35,8 @@ public class MovementBehaviour : MonoBehaviour
     [SerializeField] public float radius = 0.2f;
     [SerializeField] public float height = 0.62f;
 
+    public bool IsCrouching => crouching;
+
 
     private bool isGrounded
     {
@@ -101,9 +103,12 @@ public class MovementBehaviour : MonoBehaviour
                 crouchTimer = 0;
                 previousCrouchSize = collision.localScale.y;
             }
+            
+            float lastFrameCrouchSize = collision.lossyScale.y;
             collision.localScale = new Vector3(collisionScale.x,
                 Mathf.Lerp(previousCrouchSize, crouchSize, crouchTimer),
                 collisionScale.z);
+            transform.position -= Vector3.up * (lastFrameCrouchSize - collision.lossyScale.y);
             crouchTimer += Time.deltaTime * crouchSpeed / (previousCrouchSize - crouchSize);
         }
         else
@@ -114,9 +119,11 @@ public class MovementBehaviour : MonoBehaviour
                 previousCrouchSize = collision.localScale.y;
             }
 
+            float lastFrameCrouchSize = collision.lossyScale.y;
             collision.localScale = new Vector3(collisionScale.x,
                 Mathf.Lerp(previousCrouchSize, collisionScale.y, -crouchTimer),
                 collisionScale.z);
+            transform.position -= Vector3.up * (lastFrameCrouchSize - collision.lossyScale.y);
             crouchTimer -= Time.deltaTime * crouchSpeed / (collisionScale.y - previousCrouchSize);
         }
     }

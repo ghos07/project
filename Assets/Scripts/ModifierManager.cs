@@ -37,6 +37,14 @@ public class ModifierManager : MonoBehaviour
         OnAddModifiers?.Invoke();
     }
 
+    /// <summary>
+    /// Combines all the modifiers for a given type
+    /// If the modifier is greater than 1, it adds the difference to the total
+    /// If the modifier is less than 1, it multiplies the total by the modifier
+    /// For example, if you have a 1.5x and a 0.5x modifier, the total will be 0.75x
+    /// </summary>
+    /// <param name="modifiers"></param>
+    /// <returns></returns>
     private float CombineModifiers(List<float> modifiers)
     {
         float totalModifier = 1;

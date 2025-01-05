@@ -11,6 +11,10 @@ public class JackGameManager : MonoBehaviour
     public static int level = 1;
     public static float difficulty = 1.0f;
 
+    public static float danger = 0.0f;
+
+    public ModifierManager modifierManager;
+
     // Editor button
     [InspectorButton("ProgressLevel")]
     public bool progressLevel;
@@ -25,7 +29,7 @@ public class JackGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        ModifierManager modifierManager = ModifierManager.GetModifierManager(gameObject);
     }
 
     private void Awake()
@@ -38,7 +42,24 @@ public class JackGameManager : MonoBehaviour
     {
         if (!CamPPBlend.Instance.locked)
         {
-            CamPPBlend.Instance.targetBlendFactor = 0.8f * (1f - lives / 2f);
+            CamPPBlend.Instance.targetBlendFactor = 0.8f * (1f - lives / 2f) * (danger + 1);
+        }
+
+        danger = modifierManager.GetValue(Modifier.DangerModifier);
+
+        if (lives <= 0)
+        {
+            // Game over
+        }
+
+        if (danger > 10f)
+        {
+            if (Random.Range(0, 100) < danger / 2f)
+            {
+                
+            }
         }
     }
+
+
 }

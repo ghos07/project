@@ -51,7 +51,12 @@ public class KeyboardGame : MonoBehaviour
 
         for (int i = 0; i < keyCount; i++)
         {
-            keysToPress.Add(keys[Random.Range(0, keys.Count)]);
+            var key = keys[Random.Range(0, keys.Count)];
+            while (key.activeOnDifficulty > JackGameManager.difficulty)
+            {
+                key = keys[Random.Range(0, keys.Count)];
+            }
+            keysToPress.Add(key);
         }
 
         currentPreviewKey = keysToPress[0];

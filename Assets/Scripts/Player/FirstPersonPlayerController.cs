@@ -10,6 +10,9 @@ public class FirstPersonPlayerController : PlayerController
     private PlayerInputActions inputActions;
     public PlayerInputActions InputActions => inputActions;
 
+    public bool canJumpWhileCrouching = true;
+    public bool canJump = true;
+
     private bool hasMovementBehaviour = true;
 
     public bool IsMoving => inputActions.PlayerMovement.Movement.ReadValue<Vector2>() != Vector2.zero;
@@ -79,6 +82,15 @@ public class FirstPersonPlayerController : PlayerController
 
     private void Jump(InputAction.CallbackContext context)
     {
+        if (!canJump)
+        {
+            return;
+        }
+        if (!canJumpWhileCrouching && movementBehaviour.IsCrouching)
+        {
+            return;
+        }
+
         movementBehaviour.Jump();
     }
 
