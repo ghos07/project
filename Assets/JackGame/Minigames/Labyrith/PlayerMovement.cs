@@ -54,18 +54,19 @@ public class PlayerMovement : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.R) && canMove)
+        if (Input.GetKey(KeyCode.C) || (Input.GetKey(KeyCode.LeftControl)) && canMove)
         {
             characterController.height = crouchHeight;
             walkSpeed = crouchSpeed;
             runSpeed = crouchSpeed;
 
-        }
+}
         else
         {
             characterController.height = defaultHeight;
-            walkSpeed = 2f;
-            runSpeed = 4f;
+            walkSpeed = 1f;
+            runSpeed = 3f;
+            crouchSpeed = 0.5f;
             jumpPower = 0f;
 
         }

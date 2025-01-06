@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 439819280506710571}
   - component: {fileID: 7550140338769095115}
   - component: {fileID: 1301395629126116661}
+  - component: {fileID: 8455610949418280182}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -325,3 +326,24 @@ MonoBehaviour:
   defaultHeight: 2
   crouchHeight: 1
   crouchSpeed: 3
+--- !u!114 &8455610949418280182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116856301909906107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 816cc8c5c2960f544a359b2b2116a556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkingSounds:
+  - {fileID: 8300000, guid: 95cdee410707116478733298d4c18e3a, type: 3}
+  - {fileID: 8300000, guid: 28facaf83f6389f4588738fb777bbe8b, type: 3}
+  - {fileID: 8300000, guid: 6c24573b786692e4288e1ae8f93b1694, type: 3}
+  - {fileID: 8300000, guid: 0083cb02ba6f9e141b4e494dcc0db60c, type: 3}
+  sprintingSounds:
+  - {fileID: 8300000, guid: 7580a90cc7ffedd4497e961a549e80c2, type: 3}
+  crouchingSounds:
+  - {fileID: 8300000, guid: a13a06776c46e3f4ba2f3d57f0e3054a, type: 3}
