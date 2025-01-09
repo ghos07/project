@@ -8,8 +8,12 @@ public class MazeGenerator : MonoBehaviour
 {
     [SerializeField]
     private Vector3 playerSpawnOffset;
+    [SerializeField] 
+    private Vector3 enemySpawnOffset;
     [SerializeField]
     private GameObject player;
+    [SerializeField]
+    private GameObject enemy;
 
     [SerializeField]
     private MazeCell _mazeCellPreFab;
@@ -176,8 +180,14 @@ public class MazeGenerator : MonoBehaviour
         int y = Random.Range(0, _mazeDepth);
         GameObject spawnTile = _mazeGrid[x,y].gameObject;
         Instantiate(player, spawnTile.transform.position+playerSpawnOffset, spawnTile.transform.rotation);
-
-
+    }
+    [ContextMenu("SpawnEnemy")]
+    public void SpawnEnemy()
+    {
+        int opp_x = Random.Range(0, _mazeWidth);
+        int opp_y = Random.Range(0, _mazeDepth);
+        GameObject spawnTile2 = _mazeGrid[opp_x, opp_y].gameObject;
+        Instantiate(enemy, spawnTile2.transform.position + enemySpawnOffset, spawnTile2.transform.rotation);
     }
 
     // Update is called once per frame

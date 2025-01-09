@@ -17,8 +17,8 @@ TagManager:
   - Player
   - InteractableHitbox
   - PuzzleInteractive
-  - 
-  - 
+  - Target
+  - Obstruction
   - 
   - 
   - 

@@ -153,7 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpawnOffset: {x: 0, y: 0.4, z: 0}
+  enemySpawnOffset: {x: 0, y: 0, z: 0}
   player: {fileID: 7116856301909906107, guid: 3fc32c9a2f248b040b84be99886a9557, type: 3}
+  enemy: {fileID: 5119485901360247340, guid: 3e70d1b27e1ea12409003e033a1ea33b, type: 3}
   _mazeCellPreFab: {fileID: 6520313266971551153, guid: 5c916a0617f5da54383df747107fc95a,
     type: 3}
   _mazeWidth: 20
@@ -350,6 +352,7 @@ GameObject:
   - component: {fileID: 1757711470}
   - component: {fileID: 1757711469}
   - component: {fileID: 1757711468}
+  - component: {fileID: 1757711472}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -444,6 +447,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1757711472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757711467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde4bf60db09bdf4e8ab5faece0c1af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags: 00000000
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
