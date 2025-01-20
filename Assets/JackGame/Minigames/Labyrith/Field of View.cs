@@ -18,7 +18,6 @@ public class FieldofView : MonoBehaviour
 
     private void Start()
     {
-        playerRef = GameObject.FindGameObjectWithTag("Player");
     }
 
     private IEnumerator FOVRoutine()
